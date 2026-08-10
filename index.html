@@ -116,17 +116,11 @@
             opacity: 0.55;
         }
 
-        /* Mobile: force all capability cards fully visible */
+        /* Mobile: keep capability cards fully visible, but allow process cards to stack */
         @media (max-width: 1023px) {
             .capability-card {
                 opacity: 1 !important;
                 border-left-color: rgba(96, 165, 250, 0.5) !important;
-            }
-            .process-card {
-                position: relative !important;
-                top: auto !important;
-                transform: none !important;
-                opacity: 1 !important;
             }
         }
     </style>
@@ -197,7 +191,7 @@
             </div>
         </section>
 
-        <!-- MISSION — reduced padding -->
+        <!-- MISSION -->
         <section id="mission" class="border-y border-brand-border bg-brand-dark/90 py-14 sm:py-20 md:py-24 px-5 sm:px-6 relative">
             <div class="max-w-5xl mx-auto space-y-5 sm:space-y-7">
                 <p class="font-mono text-[10px] sm:text-xs text-blue-300/70 tracking-widest uppercase">Our Perspective</p>
@@ -275,7 +269,7 @@
             </div>
         </section>
 
-        <!-- PROCESS -->
+        <!-- PROCESS — sticky stacking now works on mobile too -->
         <section id="process" class="relative py-14 sm:py-20 md:py-28 px-5 sm:px-6 max-w-7xl mx-auto border-t border-brand-border">
             <div class="space-y-3 sm:space-y-4 mb-8 sm:mb-14">
                 <p class="font-mono text-[10px] sm:text-xs text-blue-300/70 tracking-widest uppercase">Montium Methodology</p>
@@ -285,7 +279,7 @@
             
             <div class="relative space-y-8 sm:space-y-12 md:space-y-16 pb-8 sm:pb-16">
 
-                <div class="process-card sticky top-28 glass-panel p-6 sm:p-8 md:p-12 transition-all duration-500 border border-transparent hover:border-white/10 rounded-2xl origin-top group">
+                <div class="process-card sticky top-24 sm:top-28 glass-panel p-6 sm:p-8 md:p-12 transition-all duration-500 border border-transparent hover:border-white/10 rounded-2xl origin-top group">
                     <div class="grid md:grid-cols-12 gap-6 md:gap-8 items-center">
                         <div class="md:col-span-8 space-y-3 sm:space-y-4">
                             <div class="flex justify-between items-center font-mono text-[10px] sm:text-xs text-slate-400">
@@ -308,7 +302,7 @@
                     </div>
                 </div>
 
-                <div class="process-card sticky top-36 glass-panel p-6 sm:p-8 md:p-12 transition-all duration-500 border border-transparent hover:border-white/10 rounded-2xl origin-top group">
+                <div class="process-card sticky top-28 sm:top-36 glass-panel p-6 sm:p-8 md:p-12 transition-all duration-500 border border-transparent hover:border-white/10 rounded-2xl origin-top group">
                     <div class="grid md:grid-cols-12 gap-6 md:gap-8 items-center">
                         <div class="md:col-span-8 space-y-3 sm:space-y-4">
                             <div class="flex justify-between items-center font-mono text-[10px] sm:text-xs text-slate-400">
@@ -345,7 +339,7 @@
                     </div>
                 </div>
 
-                <div class="process-card sticky top-44 glass-panel p-6 sm:p-8 md:p-12 transition-all duration-500 border border-transparent hover:border-white/10 rounded-2xl origin-top group">
+                <div class="process-card sticky top-32 sm:top-44 glass-panel p-6 sm:p-8 md:p-12 transition-all duration-500 border border-transparent hover:border-white/10 rounded-2xl origin-top group">
                     <div class="grid md:grid-cols-12 gap-6 md:gap-8 items-center">
                         <div class="md:col-span-8 space-y-3 sm:space-y-4">
                             <div class="flex justify-between items-center font-mono text-[10px] sm:text-xs text-slate-400">
@@ -368,7 +362,7 @@
                     </div>
                 </div>
 
-                <div class="process-card sticky top-52 glass-panel p-6 sm:p-8 md:p-12 transition-all duration-500 border border-transparent hover:border-white/10 rounded-2xl origin-top group">
+                <div class="process-card sticky top-36 sm:top-52 glass-panel p-6 sm:p-8 md:p-12 transition-all duration-500 border border-transparent hover:border-white/10 rounded-2xl origin-top group">
                     <div class="grid md:grid-cols-12 gap-6 md:gap-8 items-center">
                         <div class="md:col-span-8 space-y-3 sm:space-y-4">
                             <div class="flex justify-between items-center font-mono text-[10px] sm:text-xs text-slate-400">
@@ -392,7 +386,7 @@
                     </div>
                 </div>
 
-                <div class="process-card sticky top-60 glass-panel p-6 sm:p-8 md:p-12 transition-all duration-500 border border-transparent hover:border-white/10 rounded-2xl origin-top group">
+                <div class="process-card sticky top-40 sm:top-60 glass-panel p-6 sm:p-8 md:p-12 transition-all duration-500 border border-transparent hover:border-white/10 rounded-2xl origin-top group">
                     <div class="grid md:grid-cols-12 gap-6 md:gap-8 items-center">
                         <div class="md:col-span-8 space-y-3 sm:space-y-4">
                             <div class="flex justify-between items-center font-mono text-[10px] sm:text-xs text-slate-400">
@@ -415,7 +409,7 @@
                     </div>
                 </div>
 
-                <div class="process-card sticky top-68 glass-panel p-6 sm:p-8 md:p-12 transition-all duration-500 border border-transparent hover:border-white/10 rounded-2xl origin-top group">
+                <div class="process-card sticky top-44 sm:top-68 glass-panel p-6 sm:p-8 md:p-12 transition-all duration-500 border border-transparent hover:border-white/10 rounded-2xl origin-top group">
                     <div class="grid md:grid-cols-12 gap-6 md:gap-8 items-center">
                         <div class="md:col-span-8 space-y-3 sm:space-y-4">
                             <div class="flex justify-between items-center font-mono text-[10px] sm:text-xs text-slate-400">
@@ -572,7 +566,7 @@
                 else span.classList.remove('is-lit');
             });
 
-            // Only run capability highlighting on large screens
+            // Capability highlighting only on large screens
             if (window.innerWidth >= 1024) {
                 const triggerPoint = window.innerHeight * 0.5;
                 const cap1 = document.getElementById('cap-1');
@@ -603,19 +597,21 @@
                     cap3.style.borderLeftColor = 'rgba(96, 165, 250, 0.7)';
                     label.innerText = "SYSTEM TOPOLOGY // GOVERNANCE FRAMEWORK";
                 }
-
-                document.querySelectorAll('.process-card').forEach((card) => {
-                    const rect = card.getBoundingClientRect();
-                    if (rect.top <= 220) {
-                        const progress = Math.min((220 - rect.top) / 300, 1);
-                        card.style.transform = `scale(${1 - (progress * 0.035)})`;
-                        card.style.opacity = 1 - (progress * 0.3);
-                    } else {
-                        card.style.transform = 'scale(1)';
-                        card.style.opacity = '1';
-                    }
-                });
             }
+
+            // Process card stacking — now runs on ALL screen sizes (including mobile)
+            document.querySelectorAll('.process-card').forEach((card) => {
+                const rect = card.getBoundingClientRect();
+                const trigger = window.innerWidth < 640 ? 160 : 220;
+                if (rect.top <= trigger) {
+                    const progress = Math.min((trigger - rect.top) / 280, 1);
+                    card.style.transform = `scale(${1 - (progress * 0.04)})`;
+                    card.style.opacity = 1 - (progress * 0.28);
+                } else {
+                    card.style.transform = 'scale(1)';
+                    card.style.opacity = '1';
+                }
+            });
         });
 
         function handleFormSubmit(event) {
