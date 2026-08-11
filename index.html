@@ -20,12 +20,16 @@
                     },
                     colors: {
                         brand: {
-                            black: '#050507',
-                            dark: '#0B0C10',
-                            card: '#12141C',
-                            silver: '#94A3B8',
-                            border: 'rgba(255, 255, 255, 0.08)',
-                            accent: '#3B82F6'
+                            black: '#07050A',
+                            dark: '#0E0B12',
+                            card: '#16131C',
+                            silver: '#A1A1AA',
+                            border: 'rgba(255, 255, 255, 0.09)',
+                            amber: '#F59E0B',
+                            gold: '#FBBF24',
+                            ember: '#F97316',
+                            blue: '#3B82F6',
+                            sky: '#60A5FA'
                         }
                     }
                 }
@@ -36,14 +40,15 @@
         .bg-grid-pattern {
             background-size: 48px 48px;
             background-image:
-                radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.03) 0%, transparent 55%),
+                radial-gradient(circle at 30% 20%, rgba(245, 158, 11, 0.04) 0%, transparent 45%),
+                radial-gradient(circle at 70% 80%, rgba(59, 130, 246, 0.04) 0%, transparent 45%),
                 linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
         }
         .glass-panel {
-            background: rgba(12, 13, 18, 0.72);
+            background: rgba(14, 11, 18, 0.78);
             backdrop-filter: blur(24px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.09);
         }
         .statement__w {
             color: rgba(255, 255, 255, 0.18);
@@ -51,7 +56,7 @@
         }
         .statement__w.is-lit {
             color: #ffffff;
-            text-shadow: 0 0 20px rgba(59, 130, 246, 0.35);
+            text-shadow: 0 0 22px rgba(245, 158, 11, 0.35);
         }
         canvas { width: 100% !important; height: 100% !important; display: block; }
         @keyframes float {
@@ -113,19 +118,18 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.55;
+            opacity: 0.5;
         }
 
-        /* Mobile: keep capability cards fully visible, but allow process cards to stack */
         @media (max-width: 1023px) {
             .capability-card {
                 opacity: 1 !important;
-                border-left-color: rgba(96, 165, 250, 0.5) !important;
+                border-left-color: rgba(245, 158, 11, 0.55) !important;
             }
         }
     </style>
 </head>
-<body class="bg-brand-black text-white font-sans antialiased selection:bg-blue-500/30 selection:text-white min-h-screen flex flex-col justify-between overflow-x-hidden">
+<body class="bg-brand-black text-white font-sans antialiased selection:bg-amber-500/30 selection:text-white min-h-screen flex flex-col justify-between overflow-x-hidden">
     
     <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0"></div>
     
@@ -134,11 +138,11 @@
             
             <a href="#hero" class="relative flex items-center h-9 overflow-hidden">
                 <span class="logo-full font-mono text-xl sm:text-2xl font-medium tracking-widest text-white flex items-center gap-2.5">
-                    <span class="inline-block w-2 h-2 sm:w-2.5 sm:h-2.5 bg-blue-400 rounded-sm"></span>
+                    <span class="inline-block w-2 h-2 sm:w-2.5 sm:h-2.5 bg-brand-amber rounded-sm shadow-[0_0_10px_rgba(245,158,11,0.6)]"></span>
                     Montium
                 </span>
                 <span class="logo-mark absolute left-0 top-1/2 -translate-y-1/2 font-mono text-2xl sm:text-3xl text-white opacity-0 scale-75 flex items-center gap-2">
-                    <span class="inline-block w-2 h-2 sm:w-2.5 sm:h-2.5 bg-blue-400 rounded-sm"></span>
+                    <span class="inline-block w-2 h-2 sm:w-2.5 sm:h-2.5 bg-brand-amber rounded-sm shadow-[0_0_10px_rgba(245,158,11,0.6)]"></span>
                     M
                 </span>
             </a>
@@ -151,7 +155,7 @@
                 <a href="#contact" class="hover:text-white transition-colors">Engagement</a>
             </nav>
             
-            <a href="#contact" class="nav-cta inline-flex items-center justify-center font-mono text-[10px] sm:text-xs uppercase tracking-widest px-4 sm:px-5 py-2 sm:py-2.5 bg-white text-black font-medium hover:bg-blue-50 transition-all">
+            <a href="#contact" class="nav-cta inline-flex items-center justify-center font-mono text-[10px] sm:text-xs uppercase tracking-widest px-4 sm:px-5 py-2 sm:py-2.5 bg-brand-amber text-black font-semibold hover:bg-brand-gold transition-all shadow-[0_0_20px_rgba(245,158,11,0.25)]">
                 Engage
             </a>
         </div>
@@ -165,26 +169,27 @@
                 <source src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4" type="video/mp4">
             </video>
             
-            <div class="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/80 to-brand-black/40 z-[1]"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-brand-black/50 z-[1]"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/85 to-brand-black/50 z-[1]"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-brand-black/60 z-[1]"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.08),transparent_50%)] z-[1]"></div>
             
             <div class="relative z-10 max-w-5xl mx-auto w-full text-left space-y-6 sm:space-y-8">
-                <div class="inline-flex items-center gap-2.5 px-3 py-1.5 bg-white/5 border border-white/10 rounded-full font-mono text-[10px] sm:text-xs text-blue-200 tracking-widest uppercase backdrop-blur-sm">
-                    <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400 animate-pulse"></span>
+                <div class="inline-flex items-center gap-2.5 px-3 py-1.5 bg-white/5 border border-brand-amber/25 rounded-full font-mono text-[10px] sm:text-xs text-brand-gold tracking-widest uppercase backdrop-blur-sm">
+                    <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-brand-amber animate-pulse shadow-[0_0_8px_rgba(245,158,11,0.8)]"></span>
                     Enterprise Technology Consulting
                 </div>
                
                 <h1 class="font-mono text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-white leading-[1.15] max-w-4xl">
                     Delivering the Next Era<br class="hidden sm:block"> of Enterprise
                 </h1>
-                <p class="max-w-xl text-sm sm:text-base md:text-lg text-slate-300 font-light leading-relaxed">
+                <p class="max-w-xl text-base sm:text-lg text-zinc-300 font-light leading-relaxed">
                     Montium executes complex digital transformations, modernises critical infrastructure, and de-risks mission-critical technology operations for market leaders.
                 </p>
                 <div class="flex flex-col sm:flex-row items-stretch sm:items-start gap-3 sm:gap-4 pt-4 font-mono text-[10px] sm:text-xs tracking-widest uppercase">
-                    <a href="#contact" class="px-6 sm:px-8 py-3.5 sm:py-4 bg-white text-black font-semibold hover:bg-blue-50 transition-all text-center">
+                    <a href="#contact" class="px-6 sm:px-8 py-3.5 sm:py-4 bg-brand-amber text-black font-semibold hover:bg-brand-gold transition-all text-center shadow-[0_0_30px_rgba(245,158,11,0.3)]">
                         Initiate Engagement
                     </a>
-                    <a href="#capabilities" class="px-6 sm:px-8 py-3.5 sm:py-4 border border-white/25 bg-black/40 text-white font-normal hover:border-white/60 hover:bg-white/5 transition-all backdrop-blur-sm text-center">
+                    <a href="#capabilities" class="px-6 sm:px-8 py-3.5 sm:py-4 border border-white/20 bg-black/40 text-white font-normal hover:border-brand-amber/50 hover:bg-white/5 transition-all backdrop-blur-sm text-center">
                         Explore Capabilities
                     </a>
                 </div>
@@ -192,9 +197,10 @@
         </section>
 
         <!-- MISSION -->
-        <section id="mission" class="border-y border-brand-border bg-brand-dark/90 py-14 sm:py-20 md:py-24 px-5 sm:px-6 relative">
-            <div class="max-w-5xl mx-auto space-y-5 sm:space-y-7">
-                <p class="font-mono text-[10px] sm:text-xs text-blue-300/70 tracking-widest uppercase">Our Perspective</p>
+        <section id="mission" class="border-y border-brand-border bg-brand-dark/95 py-14 sm:py-20 md:py-24 px-5 sm:px-6 relative">
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(249,115,22,0.04),transparent_60%)]"></div>
+            <div class="relative max-w-5xl mx-auto space-y-5 sm:space-y-7">
+                <p class="font-mono text-[10px] sm:text-xs text-brand-amber/80 tracking-widest uppercase">Our Perspective</p>
                 <p id="lit-statement" class="font-mono text-xl sm:text-2xl md:text-4xl lg:text-5xl font-light tracking-tight leading-snug">
                     <span class="statement__w">Legacy</span> <span class="statement__w">infrastructure</span> <span class="statement__w">holds</span> <span class="statement__w">businesses</span> <span class="statement__w">back.</span> <span class="statement__w">Montium</span> <span class="statement__w">deploys</span> <span class="statement__w">expert</span> <span class="statement__w">execution</span> <span class="statement__w">teams</span> <span class="statement__w">to</span> <span class="statement__w">modernise</span> <span class="statement__w">complex</span> <span class="statement__w">tech</span> <span class="statement__w">ecosystems,</span> <span class="statement__w">unlocking</span> <span class="statement__w">operational</span> <span class="statement__w">energy,</span> <span class="statement__w">securing</span> <span class="statement__w">data</span> <span class="statement__w">sovereignty</span> <span class="statement__w">and</span> <span class="statement__w">speeding</span> <span class="statement__w">up</span> <span class="statement__w">time</span> <span class="statement__w">to</span> <span class="statement__w">market.</span>
                 </p>
@@ -204,64 +210,64 @@
         <!-- CAPABILITIES -->
         <section id="capabilities" class="py-14 sm:py-20 md:py-28 px-5 sm:px-6 max-w-7xl mx-auto">
             <div class="space-y-3 sm:space-y-4 mb-8 sm:mb-14">
-                <p class="font-mono text-[10px] sm:text-xs text-blue-300/70 tracking-widest uppercase">Practice Areas</p>
+                <p class="font-mono text-[10px] sm:text-xs text-brand-amber/80 tracking-widest uppercase">Practice Areas</p>
                 <h2 class="font-mono text-2xl sm:text-3xl md:text-5xl font-light tracking-tight">Core Practice Capabilities</h2>
             </div>
             <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start relative">
                 <div class="lg:col-span-6 space-y-10 sm:space-y-14 lg:space-y-24 lg:pb-[20vh]">
                    
-                    <div id="cap-1" class="capability-card p-6 sm:p-8 md:p-12 space-y-5 border-l-2 border-blue-400/60 transition-all duration-500 opacity-100">
-                        <span class="font-mono text-[10px] sm:text-xs text-blue-300/80 uppercase tracking-widest">DIGITAL & WORKPLACE TRANSFORMATION</span>
+                    <div id="cap-1" class="capability-card p-6 sm:p-8 md:p-12 space-y-5 border-l-2 border-brand-amber/70 transition-all duration-500 opacity-100">
+                        <span class="font-mono text-[10px] sm:text-xs text-brand-gold/90 uppercase tracking-widest">DIGITAL & WORKPLACE TRANSFORMATION</span>
                         <h3 class="font-mono text-xl sm:text-2xl font-light text-white">Modern Workplace Systems</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed font-light">
+                        <p class="text-base text-zinc-300 leading-relaxed font-light">
                             Consolidating complex tenancies, multi-cloud environments, and digital operations into unified, resilient enterprise platforms.
                         </p>
-                        <ul class="space-y-2.5 font-mono text-[11px] sm:text-xs text-slate-400 border-t border-brand-border pt-5">
-                            <li class="flex items-center gap-2"><span class="text-blue-400">►</span> Multi-tenancy consolidation & environment unification</li>
-                            <li class="flex items-center gap-2"><span class="text-blue-400">►</span> Cloud infrastructure optimisation & zero-trust security</li>
-                            <li class="flex items-center gap-2"><span class="text-blue-400">►</span> Digital workforce acceleration & change management</li>
+                        <ul class="space-y-2.5 font-mono text-sm text-zinc-400 border-t border-brand-border pt-5">
+                            <li class="flex items-center gap-2"><span class="text-brand-amber">►</span> Multi-tenancy consolidation & environment unification</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-amber">►</span> Cloud infrastructure optimisation & zero-trust security</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-amber">►</span> Digital workforce acceleration & change management</li>
                         </ul>
                     </div>
 
                     <div id="cap-2" class="capability-card p-6 sm:p-8 md:p-12 space-y-5 border-l-2 border-transparent transition-all duration-500 opacity-40">
-                        <span class="font-mono text-[10px] sm:text-xs text-blue-300/80 uppercase tracking-widest">STRATEGIC ARCHITECTURE</span>
+                        <span class="font-mono text-[10px] sm:text-xs text-brand-sky/90 uppercase tracking-widest">STRATEGIC ARCHITECTURE</span>
                         <h3 class="font-mono text-xl sm:text-2xl font-light text-white">Enterprise Architecture</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed font-light">
+                        <p class="text-base text-zinc-300 leading-relaxed font-light">
                             Designing resilient, high-speed IT architectures built for operational scalability, platform integration, and long-term agility.
                         </p>
-                        <ul class="space-y-2.5 font-mono text-[11px] sm:text-xs text-slate-400 border-t border-brand-border pt-5">
-                            <li class="flex items-center gap-2"><span class="text-blue-400">►</span> Next-generation IT roadmap & architecture design</li>
-                            <li class="flex items-center gap-2"><span class="text-blue-400">►</span> Complex systems integration & platform modernisation</li>
-                            <li class="flex items-center gap-2"><span class="text-blue-400">►</span> Data sovereignty, resilience, and compliance</li>
+                        <ul class="space-y-2.5 font-mono text-sm text-zinc-400 border-t border-brand-border pt-5">
+                            <li class="flex items-center gap-2"><span class="text-brand-sky">►</span> Next-generation IT roadmap & architecture design</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-sky">►</span> Complex systems integration & platform modernisation</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-sky">►</span> Data sovereignty, resilience, and compliance</li>
                         </ul>
                     </div>
 
                     <div id="cap-3" class="capability-card p-6 sm:p-8 md:p-12 space-y-5 border-l-2 border-transparent transition-all duration-500 opacity-40">
-                        <span class="font-mono text-[10px] sm:text-xs text-blue-300/80 uppercase tracking-widest">ADVISORY & DELIVERY ASSURANCE</span>
+                        <span class="font-mono text-[10px] sm:text-xs text-brand-ember/90 uppercase tracking-widest">ADVISORY & DELIVERY ASSURANCE</span>
                         <h3 class="font-mono text-xl sm:text-2xl font-light text-white">Governance & Execution Assurance</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed font-light">
+                        <p class="text-base text-zinc-300 leading-relaxed font-light">
                             Deploying rigorous advisory frameworks and leadership structures to de-risk high-stakes technology investments and deliver strategic outcomes.
                         </p>
-                        <ul class="space-y-2.5 font-mono text-[11px] sm:text-xs text-slate-400 border-t border-brand-border pt-5">
-                            <li class="flex items-center gap-2"><span class="text-blue-400">►</span> High-stakes technology delivery & program leadership</li>
-                            <li class="flex items-center gap-2"><span class="text-blue-400">►</span> Operational risk mitigation & delivery assurance</li>
-                            <li class="flex items-center gap-2"><span class="text-blue-400">►</span> Strategic advisory for enterprise teams</li>
+                        <ul class="space-y-2.5 font-mono text-sm text-zinc-400 border-t border-brand-border pt-5">
+                            <li class="flex items-center gap-2"><span class="text-brand-ember">►</span> High-stakes technology delivery & program leadership</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-ember">►</span> Operational risk mitigation & delivery assurance</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-ember">►</span> Strategic advisory for enterprise teams</li>
                         </ul>
                     </div>
                 </div>
 
-                <div id="canvas-card" class="lg:col-span-6 lg:sticky lg:top-28 h-[320px] sm:h-[420px] lg:h-[520px] glass-panel rounded-2xl overflow-hidden flex flex-col justify-between p-5 sm:p-6 transition-all duration-700 shadow-2xl shadow-blue-500/5">
-                    <div class="absolute inset-0 opacity-60 bg-[url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1800&auto=format&fit=crop')] bg-cover bg-center z-0"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/55 to-brand-black/25 z-0"></div>
+                <div id="canvas-card" class="lg:col-span-6 lg:sticky lg:top-28 h-[320px] sm:h-[420px] lg:h-[520px] glass-panel rounded-2xl overflow-hidden flex flex-col justify-between p-5 sm:p-6 transition-all duration-700 shadow-2xl shadow-amber-500/10">
+                    <div class="absolute inset-0 opacity-55 bg-[url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1800&auto=format&fit=crop')] bg-cover bg-center z-0"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/60 to-brand-black/30 z-0"></div>
                     
                     <div class="flex justify-between items-center font-mono text-[10px] sm:text-xs text-white border-b border-white/10 pb-3 sm:pb-4 z-10">
                         <span id="canvas-label" class="font-medium tracking-wide truncate pr-2">SYSTEM TOPOLOGY // UNIFIED WORKPLACE</span>
-                        <span class="text-blue-300 bg-blue-500/10 border border-blue-400/30 px-2 py-0.5 rounded text-[9px] sm:text-[10px] shrink-0">ACTIVE</span>
+                        <span class="text-brand-gold bg-brand-amber/15 border border-brand-amber/40 px-2 py-0.5 rounded text-[9px] sm:text-[10px] shrink-0">ACTIVE</span>
                     </div>
                    
                     <div id="canvas-container" class="absolute inset-0 z-0"></div>
                    
-                    <div class="z-10 font-mono text-[9px] sm:text-[10px] text-slate-400 uppercase flex justify-between tracking-widest pt-3 sm:pt-4 border-t border-white/10">
+                    <div class="z-10 font-mono text-[9px] sm:text-[10px] text-zinc-400 uppercase flex justify-between tracking-widest pt-3 sm:pt-4 border-t border-white/10">
                         <span>[ Interactive Model ]</span>
                         <span id="canvas-coords">System Topology Viz</span>
                     </div>
@@ -269,166 +275,166 @@
             </div>
         </section>
 
-        <!-- PROCESS — sticky stacking now works on mobile too -->
+        <!-- PROCESS -->
         <section id="process" class="relative py-14 sm:py-20 md:py-28 px-5 sm:px-6 max-w-7xl mx-auto border-t border-brand-border">
             <div class="space-y-3 sm:space-y-4 mb-8 sm:mb-14">
-                <p class="font-mono text-[10px] sm:text-xs text-blue-300/70 tracking-widest uppercase">Montium Methodology</p>
+                <p class="font-mono text-[10px] sm:text-xs text-brand-amber/80 tracking-widest uppercase">Montium Methodology</p>
                 <h2 class="font-mono text-2xl sm:text-3xl md:text-5xl font-light tracking-tight">The Engagement Process</h2>
-                <p class="text-sm text-slate-400 font-light max-w-xl">A structured, six-phase consulting framework engineered for seamless transition and measurable impact.</p>
+                <p class="text-base text-zinc-300 font-light max-w-xl leading-relaxed">A structured, six-phase consulting framework engineered for seamless transition and measurable impact.</p>
             </div>
             
             <div class="relative space-y-8 sm:space-y-12 md:space-y-16 pb-8 sm:pb-16">
 
-                <div class="process-card sticky top-24 sm:top-28 glass-panel p-6 sm:p-8 md:p-12 transition-all duration-500 border border-transparent hover:border-white/10 rounded-2xl origin-top group">
+                <div class="process-card sticky top-24 sm:top-28 glass-panel p-6 sm:p-8 md:p-12 transition-all duration-500 border border-transparent hover:border-brand-amber/20 rounded-2xl origin-top group">
                     <div class="grid md:grid-cols-12 gap-6 md:gap-8 items-center">
                         <div class="md:col-span-8 space-y-3 sm:space-y-4">
-                            <div class="flex justify-between items-center font-mono text-[10px] sm:text-xs text-slate-400">
+                            <div class="flex justify-between items-center font-mono text-[10px] sm:text-xs text-zinc-400">
                                 <span class="text-white font-medium">INITIATE ENGAGEMENT</span>
-                                <span class="text-white/25 group-hover:text-blue-300 transition-colors">STAGE I</span>
+                                <span class="text-white/25 group-hover:text-brand-amber transition-colors">STAGE I</span>
                             </div>
                             <h3 class="font-mono text-xl sm:text-2xl font-light text-white">Initial leadership alignment and scoping</h3>
-                            <p class="text-sm text-slate-400 leading-relaxed font-light">
+                            <p class="text-base text-zinc-300 leading-relaxed font-light">
                                 Connect directly with Montium leadership to define high-level strategic objectives, operational constraints, and critical timeline milestones.
                             </p>
                         </div>
                         <div class="md:col-span-4 h-32 sm:h-40 bg-brand-card/80 border border-white/10 rounded-xl flex items-center justify-center relative overflow-hidden">
-                            <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-br from-brand-amber/15 to-transparent"></div>
                             <div class="relative flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 animate-float">
-                                <div class="absolute w-full h-full border border-blue-400/30 rounded-full animate-spin-slow"></div>
+                                <div class="absolute w-full h-full border border-brand-amber/35 rounded-full animate-spin-slow"></div>
                                 <div class="absolute w-12 h-12 sm:w-16 sm:h-16 border border-dashed border-white/25 rounded-full animate-spin-reverse"></div>
-                                <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-blue-400 rounded-full group-hover:scale-150 transition-transform duration-500 shadow-[0_0_20px_rgba(59,130,246,0.6)]"></div>
+                                <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-brand-amber rounded-full group-hover:scale-150 transition-transform duration-500 shadow-[0_0_20px_rgba(245,158,11,0.7)]"></div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="process-card sticky top-28 sm:top-36 glass-panel p-6 sm:p-8 md:p-12 transition-all duration-500 border border-transparent hover:border-white/10 rounded-2xl origin-top group">
+                <div class="process-card sticky top-28 sm:top-36 glass-panel p-6 sm:p-8 md:p-12 transition-all duration-500 border border-transparent hover:border-brand-blue/25 rounded-2xl origin-top group">
                     <div class="grid md:grid-cols-12 gap-6 md:gap-8 items-center">
                         <div class="md:col-span-8 space-y-3 sm:space-y-4">
-                            <div class="flex justify-between items-center font-mono text-[10px] sm:text-xs text-slate-400">
+                            <div class="flex justify-between items-center font-mono text-[10px] sm:text-xs text-zinc-400">
                                 <span class="text-white font-medium">REQUIREMENT DISCOVERY & DIAGNOSTIC</span>
-                                <span class="text-white/25 group-hover:text-blue-300 transition-colors">STAGE II</span>
+                                <span class="text-white/25 group-hover:text-brand-sky transition-colors">STAGE II</span>
                             </div>
                             <h3 class="font-mono text-xl sm:text-2xl font-light text-white">Deep-dive technical assessment</h3>
-                            <p class="text-sm text-slate-400 leading-relaxed font-light">
+                            <p class="text-base text-zinc-300 leading-relaxed font-light">
                                 Conduct a comprehensive diagnostic of your existing IT ecosystem, multi-tenancy footprint, security parameters, and organisational change readiness.
                             </p>
                         </div>
                         <div class="md:col-span-4 h-32 sm:h-40 bg-brand-card/80 border border-white/10 rounded-xl flex items-center justify-center relative overflow-hidden">
-                            <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-br from-brand-blue/15 to-transparent"></div>
                             <div class="relative w-20 h-20 sm:w-24 sm:h-24 grid grid-cols-4 grid-rows-4 gap-1 p-2 opacity-60 group-hover:opacity-100 transition-opacity">
-                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400/40 mx-auto"></div>
-                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400/40 mx-auto"></div>
-                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400/40 mx-auto"></div>
-                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400/40 mx-auto"></div>
-                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400/40 mx-auto"></div>
-                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400/40 mx-auto"></div>
-                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400/40 mx-auto"></div>
-                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400/40 mx-auto"></div>
-                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400/40 mx-auto"></div>
-                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400/40 mx-auto"></div>
-                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400/40 mx-auto"></div>
-                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400/40 mx-auto"></div>
-                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400/40 mx-auto"></div>
-                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400/40 mx-auto"></div>
-                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400/40 mx-auto"></div>
-                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400/40 mx-auto"></div>
-                                <div class="absolute top-0 left-0 w-full h-0.5 bg-blue-400 shadow-[0_0_12px_rgba(59,130,246,0.8)] animate-scanline"></div>
+                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-brand-sky/50 mx-auto"></div>
+                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-brand-sky/50 mx-auto"></div>
+                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-brand-sky/50 mx-auto"></div>
+                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-brand-sky/50 mx-auto"></div>
+                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-brand-sky/50 mx-auto"></div>
+                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-brand-sky/50 mx-auto"></div>
+                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-brand-sky/50 mx-auto"></div>
+                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-brand-sky/50 mx-auto"></div>
+                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-brand-sky/50 mx-auto"></div>
+                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-brand-sky/50 mx-auto"></div>
+                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-brand-sky/50 mx-auto"></div>
+                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-brand-sky/50 mx-auto"></div>
+                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-brand-sky/50 mx-auto"></div>
+                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-brand-sky/50 mx-auto"></div>
+                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-brand-sky/50 mx-auto"></div>
+                                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-brand-sky/50 mx-auto"></div>
+                                <div class="absolute top-0 left-0 w-full h-0.5 bg-brand-sky shadow-[0_0_12px_rgba(96,165,250,0.8)] animate-scanline"></div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="process-card sticky top-32 sm:top-44 glass-panel p-6 sm:p-8 md:p-12 transition-all duration-500 border border-transparent hover:border-white/10 rounded-2xl origin-top group">
+                <div class="process-card sticky top-32 sm:top-44 glass-panel p-6 sm:p-8 md:p-12 transition-all duration-500 border border-transparent hover:border-brand-ember/25 rounded-2xl origin-top group">
                     <div class="grid md:grid-cols-12 gap-6 md:gap-8 items-center">
                         <div class="md:col-span-8 space-y-3 sm:space-y-4">
-                            <div class="flex justify-between items-center font-mono text-[10px] sm:text-xs text-slate-400">
+                            <div class="flex justify-between items-center font-mono text-[10px] sm:text-xs text-zinc-400">
                                 <span class="text-white font-medium">ARCHITECTURE & ROADMAP DESIGN</span>
-                                <span class="text-white/25 group-hover:text-blue-300 transition-colors">STAGE III</span>
+                                <span class="text-white/25 group-hover:text-brand-ember transition-colors">STAGE III</span>
                             </div>
                             <h3 class="font-mono text-xl sm:text-2xl font-light text-white">Blueprinting the target state</h3>
-                            <p class="text-sm text-slate-400 leading-relaxed font-light">
+                            <p class="text-base text-zinc-300 leading-relaxed font-light">
                                 Engineer a tailored target-state architecture, risk mitigation framework, and phased execution roadmap designed for zero downtime and maximum enterprise agility.
                             </p>
                         </div>
                         <div class="md:col-span-4 h-32 sm:h-40 bg-brand-card/80 border border-white/10 rounded-xl flex items-center justify-center relative overflow-hidden">
-                            <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-br from-brand-ember/15 to-transparent"></div>
                             <div class="relative w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center -rotate-12 group-hover:rotate-0 transition-transform duration-700">
-                                <div class="absolute w-12 h-12 sm:w-16 sm:h-16 border border-blue-400/20 rotate-45 translate-y-4 sm:translate-y-6 animate-float"></div>
-                                <div class="absolute w-12 h-12 sm:w-16 sm:h-16 border border-blue-400/40 rotate-45 translate-y-1 sm:translate-y-2 animate-float" style="animation-delay: -1s;"></div>
-                                <div class="absolute w-12 h-12 sm:w-16 sm:h-16 border border-blue-400 bg-blue-500/10 rotate-45 -translate-y-1 sm:-translate-y-2 animate-float" style="animation-delay: -2s;"></div>
+                                <div class="absolute w-12 h-12 sm:w-16 sm:h-16 border border-brand-ember/25 rotate-45 translate-y-4 sm:translate-y-6 animate-float"></div>
+                                <div class="absolute w-12 h-12 sm:w-16 sm:h-16 border border-brand-ember/45 rotate-45 translate-y-1 sm:translate-y-2 animate-float" style="animation-delay: -1s;"></div>
+                                <div class="absolute w-12 h-12 sm:w-16 sm:h-16 border border-brand-ember bg-brand-ember/15 rotate-45 -translate-y-1 sm:-translate-y-2 animate-float" style="animation-delay: -2s;"></div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="process-card sticky top-36 sm:top-52 glass-panel p-6 sm:p-8 md:p-12 transition-all duration-500 border border-transparent hover:border-white/10 rounded-2xl origin-top group">
+                <div class="process-card sticky top-36 sm:top-52 glass-panel p-6 sm:p-8 md:p-12 transition-all duration-500 border border-transparent hover:border-brand-amber/25 rounded-2xl origin-top group">
                     <div class="grid md:grid-cols-12 gap-6 md:gap-8 items-center">
                         <div class="md:col-span-8 space-y-3 sm:space-y-4">
-                            <div class="flex justify-between items-center font-mono text-[10px] sm:text-xs text-slate-400">
+                            <div class="flex justify-between items-center font-mono text-[10px] sm:text-xs text-zinc-400">
                                 <span class="text-white font-medium">GOVERNANCE & SOW FORMULATION</span>
-                                <span class="text-white/25 group-hover:text-blue-300 transition-colors">STAGE IV</span>
+                                <span class="text-white/25 group-hover:text-brand-amber transition-colors">STAGE IV</span>
                             </div>
                             <h3 class="font-mono text-xl sm:text-2xl font-light text-white">Establishing delivery rules and structure</h3>
-                            <p class="text-sm text-slate-400 leading-relaxed font-light">
+                            <p class="text-base text-zinc-300 leading-relaxed font-light">
                                 Formalise precise Statements of Work (SOWs), governance structures, delivery milestones, and KPIs to ensure absolute alignment before deployment begins.
                             </p>
                         </div>
                         <div class="md:col-span-4 h-32 sm:h-40 bg-brand-card/80 border border-white/10 rounded-xl flex items-center justify-center relative overflow-hidden">
-                            <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-br from-brand-amber/12 to-transparent"></div>
                             <div class="relative w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center">
-                                <div class="absolute w-12 h-12 sm:w-16 sm:h-16 border border-blue-400/30 rounded-sm group-hover:border-blue-400/60 transition-colors duration-500"></div>
-                                <div class="absolute w-9 h-9 sm:w-12 sm:h-12 border border-blue-400/50 rounded-sm translate-x-1 translate-y-1 sm:translate-x-1.5 sm:translate-y-1.5 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-500"></div>
-                                <div class="absolute w-4 h-4 sm:w-6 sm:h-6 bg-blue-400/20 border border-blue-400/70 rounded-sm group-hover:bg-blue-400/30 transition-all duration-500"></div>
-                                <div class="absolute w-1 h-1 sm:w-1.5 sm:h-1.5 bg-blue-400 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+                                <div class="absolute w-12 h-12 sm:w-16 sm:h-16 border border-brand-amber/35 rounded-sm group-hover:border-brand-amber/70 transition-colors duration-500"></div>
+                                <div class="absolute w-9 h-9 sm:w-12 sm:h-12 border border-brand-amber/55 rounded-sm translate-x-1 translate-y-1 sm:translate-x-1.5 sm:translate-y-1.5 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-500"></div>
+                                <div class="absolute w-4 h-4 sm:w-6 sm:h-6 bg-brand-amber/20 border border-brand-amber/70 rounded-sm group-hover:bg-brand-amber/35 transition-all duration-500"></div>
+                                <div class="absolute w-1 h-1 sm:w-1.5 sm:h-1.5 bg-brand-amber rounded-full group-hover:scale-150 transition-transform duration-500"></div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="process-card sticky top-40 sm:top-60 glass-panel p-6 sm:p-8 md:p-12 transition-all duration-500 border border-transparent hover:border-white/10 rounded-2xl origin-top group">
+                <div class="process-card sticky top-40 sm:top-60 glass-panel p-6 sm:p-8 md:p-12 transition-all duration-500 border border-transparent hover:border-brand-sky/25 rounded-2xl origin-top group">
                     <div class="grid md:grid-cols-12 gap-6 md:gap-8 items-center">
                         <div class="md:col-span-8 space-y-3 sm:space-y-4">
-                            <div class="flex justify-between items-center font-mono text-[10px] sm:text-xs text-slate-400">
+                            <div class="flex justify-between items-center font-mono text-[10px] sm:text-xs text-zinc-400">
                                 <span class="text-white font-medium">DEPLOYMENT & EXECUTION ASSURANCE</span>
-                                <span class="text-white/25 group-hover:text-blue-300 transition-colors">STAGE V</span>
+                                <span class="text-white/25 group-hover:text-brand-sky transition-colors">STAGE V</span>
                             </div>
                             <h3 class="font-mono text-xl sm:text-2xl font-light text-white">Mission-critical execution</h3>
-                            <p class="text-sm text-slate-400 leading-relaxed font-light">
+                            <p class="text-base text-zinc-300 leading-relaxed font-light">
                                 Mobilise delivery teams to execute infrastructure modernisation, tenancy consolidation, and OCM with continuous governance and quality control.
                             </p>
                         </div>
                         <div class="md:col-span-4 h-32 sm:h-40 bg-brand-card/80 border border-white/10 rounded-xl flex items-center justify-center relative overflow-hidden">
-                            <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-br from-brand-blue/15 to-transparent"></div>
                             <div class="flex gap-2">
-                                <svg class="w-6 h-6 sm:w-8 sm:h-8 text-blue-400/30 animate-slide-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                                <svg class="w-6 h-6 sm:w-8 sm:h-8 text-blue-400/60 animate-slide-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                                <svg class="w-6 h-6 sm:w-8 sm:h-8 text-blue-400 animate-slide-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                <svg class="w-6 h-6 sm:w-8 sm:h-8 text-brand-sky/35 animate-slide-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                <svg class="w-6 h-6 sm:w-8 sm:h-8 text-brand-sky/65 animate-slide-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                <svg class="w-6 h-6 sm:w-8 sm:h-8 text-brand-sky animate-slide-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="process-card sticky top-44 sm:top-68 glass-panel p-6 sm:p-8 md:p-12 transition-all duration-500 border border-transparent hover:border-white/10 rounded-2xl origin-top group">
+                <div class="process-card sticky top-44 sm:top-68 glass-panel p-6 sm:p-8 md:p-12 transition-all duration-500 border border-transparent hover:border-brand-ember/25 rounded-2xl origin-top group">
                     <div class="grid md:grid-cols-12 gap-6 md:gap-8 items-center">
                         <div class="md:col-span-8 space-y-3 sm:space-y-4">
-                            <div class="flex justify-between items-center font-mono text-[10px] sm:text-xs text-slate-400">
+                            <div class="flex justify-between items-center font-mono text-[10px] sm:text-xs text-zinc-400">
                                 <span class="text-white font-medium">SYSTEM OPTIMISATION & SCALE</span>
-                                <span class="text-white/25 group-hover:text-blue-300 transition-colors">STAGE VI</span>
+                                <span class="text-white/25 group-hover:text-brand-ember transition-colors">STAGE VI</span>
                             </div>
                             <h3 class="font-mono text-xl sm:text-2xl font-light text-white">Operational handoff and continuous capability</h3>
-                            <p class="text-sm text-slate-400 leading-relaxed font-light">
+                            <p class="text-base text-zinc-300 leading-relaxed font-light">
                                 Validate performance metrics, finalise knowledge transfer to internal teams, and establish ongoing advisory mechanisms for future enterprise expansion.
                             </p>
                         </div>
                         <div class="md:col-span-4 h-32 sm:h-40 bg-brand-card/80 border border-white/10 rounded-xl flex items-center justify-center relative overflow-hidden">
-                            <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-br from-brand-ember/12 to-transparent"></div>
                             <div class="relative flex items-center justify-center w-full h-full animate-float">
-                                <div class="absolute w-9 h-9 sm:w-12 sm:h-12 bg-blue-500/15 rounded-full animate-pulse shadow-[0_0_25px_rgba(59,130,246,0.3)]"></div>
-                                <div class="absolute w-3 h-3 sm:w-4 sm:h-4 bg-blue-400 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
-                                <div class="absolute w-12 h-12 sm:w-16 sm:h-16 border-t-2 border-r-2 border-blue-400/40 rounded-full animate-spin-slow"></div>
-                                <div class="absolute w-14 h-14 sm:w-20 sm:h-20 border-b-2 border-l-2 border-blue-400/20 rounded-full animate-spin-reverse"></div>
-                                <div class="absolute w-16 h-16 sm:w-24 sm:h-24 border border-dashed border-blue-400/15 rounded-full animate-spin-slow" style="animation-duration: 22s;"></div>
+                                <div class="absolute w-9 h-9 sm:w-12 sm:h-12 bg-brand-ember/20 rounded-full animate-pulse shadow-[0_0_25px_rgba(249,115,22,0.35)]"></div>
+                                <div class="absolute w-3 h-3 sm:w-4 sm:h-4 bg-brand-ember rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+                                <div class="absolute w-12 h-12 sm:w-16 sm:h-16 border-t-2 border-r-2 border-brand-ember/45 rounded-full animate-spin-slow"></div>
+                                <div class="absolute w-14 h-14 sm:w-20 sm:h-20 border-b-2 border-l-2 border-brand-ember/25 rounded-full animate-spin-reverse"></div>
+                                <div class="absolute w-16 h-16 sm:w-24 sm:h-24 border border-dashed border-brand-ember/15 rounded-full animate-spin-slow" style="animation-duration: 22s;"></div>
                             </div>
                         </div>
                     </div>
@@ -439,26 +445,26 @@
         <!-- CONTACT -->
         <section id="contact" class="py-14 sm:py-20 md:py-28 px-5 sm:px-6 max-w-4xl mx-auto space-y-8 sm:space-y-12 border-t border-brand-border">
             <div class="space-y-4 sm:space-y-5 text-center">
-                <p class="font-mono text-[10px] sm:text-xs text-blue-300/70 tracking-widest uppercase">Get in Touch</p>
+                <p class="font-mono text-[10px] sm:text-xs text-brand-amber/80 tracking-widest uppercase">Get in Touch</p>
                 <h2 class="font-mono text-2xl sm:text-3xl md:text-5xl font-light tracking-tight">Ready to Accelerate<br>Your Roadmap?</h2>
-                <p class="text-sm text-slate-400 max-w-lg mx-auto font-light">
+                <p class="text-base text-zinc-300 max-w-lg mx-auto font-light leading-relaxed">
                     Schedule a discovery session to evaluate your current technology ecosystem and architect your path forward.
                 </p>
             </div>
             <form id="discovery-form" onsubmit="handleFormSubmit(event)" class="glass-panel p-6 sm:p-8 md:p-12 space-y-5 sm:space-y-6 rounded-2xl">
                 <div class="grid sm:grid-cols-2 gap-5">
                     <div class="space-y-2">
-                        <label class="font-mono text-[10px] sm:text-xs text-slate-400 uppercase tracking-wider">Name</label>
-                        <input type="text" required class="w-full bg-brand-card border border-brand-border p-3 sm:p-3.5 text-sm text-white focus:outline-none focus:border-blue-400/50 font-sans transition-colors rounded-lg">
+                        <label class="font-mono text-[10px] sm:text-xs text-zinc-400 uppercase tracking-wider">Name</label>
+                        <input type="text" required class="w-full bg-brand-card border border-brand-border p-3 sm:p-3.5 text-sm text-white focus:outline-none focus:border-brand-amber/50 font-sans transition-colors rounded-lg">
                     </div>
                     <div class="space-y-2">
-                        <label class="font-mono text-[10px] sm:text-xs text-slate-400 uppercase tracking-wider">Email</label>
-                        <input type="email" required class="w-full bg-brand-card border border-brand-border p-3 sm:p-3.5 text-sm text-white focus:outline-none focus:border-blue-400/50 font-sans transition-colors rounded-lg">
+                        <label class="font-mono text-[10px] sm:text-xs text-zinc-400 uppercase tracking-wider">Email</label>
+                        <input type="email" required class="w-full bg-brand-card border border-brand-border p-3 sm:p-3.5 text-sm text-white focus:outline-none focus:border-brand-amber/50 font-sans transition-colors rounded-lg">
                     </div>
                 </div>
                 <div class="space-y-2">
-                    <label class="font-mono text-[10px] sm:text-xs text-slate-400 uppercase tracking-wider">Practice Focus / Objective</label>
-                    <select class="w-full bg-brand-card border border-brand-border p-3 sm:p-3.5 text-sm text-white focus:outline-none focus:border-blue-400/50 font-sans transition-colors rounded-lg">
+                    <label class="font-mono text-[10px] sm:text-xs text-zinc-400 uppercase tracking-wider">Practice Focus / Objective</label>
+                    <select class="w-full bg-brand-card border border-brand-border p-3 sm:p-3.5 text-sm text-white focus:outline-none focus:border-brand-amber/50 font-sans transition-colors rounded-lg">
                         <option>Modern Workplace Systems</option>
                         <option>Enterprise Architecture</option>
                         <option>Governance & Execution Assurance</option>
@@ -466,21 +472,21 @@
                     </select>
                 </div>
                 <div class="space-y-2">
-                    <label class="font-mono text-[10px] sm:text-xs text-slate-400 uppercase tracking-wider">Ecosystem Overview / Notes</label>
-                    <textarea rows="4" class="w-full bg-brand-card border border-brand-border p-3 sm:p-3.5 text-sm text-white focus:outline-none focus:border-blue-400/50 font-sans transition-colors rounded-lg"></textarea>
+                    <label class="font-mono text-[10px] sm:text-xs text-zinc-400 uppercase tracking-wider">Ecosystem Overview / Notes</label>
+                    <textarea rows="4" class="w-full bg-brand-card border border-brand-border p-3 sm:p-3.5 text-sm text-white focus:outline-none focus:border-brand-amber/50 font-sans transition-colors rounded-lg"></textarea>
                 </div>
-                <button type="submit" class="w-full py-3.5 sm:py-4 bg-white text-black font-mono text-[10px] sm:text-xs font-semibold uppercase tracking-widest hover:bg-blue-50 transition-colors rounded-lg">
+                <button type="submit" class="w-full py-3.5 sm:py-4 bg-brand-amber text-black font-mono text-[10px] sm:text-xs font-semibold uppercase tracking-widest hover:bg-brand-gold transition-colors rounded-lg shadow-[0_0_25px_rgba(245,158,11,0.25)]">
                     Schedule Discovery Session
                 </button>
-                <p id="form-status" class="hidden text-center font-mono text-[10px] sm:text-xs text-blue-300 pt-1"></p>
+                <p id="form-status" class="hidden text-center font-mono text-[10px] sm:text-xs text-brand-gold pt-1"></p>
             </form>
         </section>
     </main>
 
     <footer class="relative z-10 border-t border-brand-border bg-brand-black py-10 sm:py-14 px-5 sm:px-6">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-5 font-mono text-[10px] sm:text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-5 font-mono text-[10px] sm:text-xs text-zinc-500">
             <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-400 rounded-sm"></span>
+                <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-brand-amber rounded-sm shadow-[0_0_8px_rgba(245,158,11,0.6)]"></span>
                 <span class="text-white font-medium tracking-widest">Montium</span>
                 <span>© 2026 Montium Advisory Systems</span>
             </div>
@@ -521,13 +527,13 @@
         }
         particlesGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
         const particlesMat = new THREE.PointsMaterial({
-            size: 0.07, color: 0x60a5fa, transparent: true, opacity: 0.45, blending: THREE.AdditiveBlending
+            size: 0.07, color: 0xf59e0b, transparent: true, opacity: 0.5, blending: THREE.AdditiveBlending
         });
         const particleMesh = new THREE.Points(particlesGeo, particlesMat);
         objectGroup.add(particleMesh);
        
         const coreGeo = new THREE.IcosahedronGeometry(1.1, 1);
-        const coreMat = new THREE.MeshBasicMaterial({ color: 0x93c5fd, wireframe: true, transparent: true, opacity: 0.18 });
+        const coreMat = new THREE.MeshBasicMaterial({ color: 0xfbbf24, wireframe: true, transparent: true, opacity: 0.2 });
         const coreMesh = new THREE.Mesh(coreGeo, coreMat);
         objectGroup.add(coreMesh);
 
@@ -566,7 +572,6 @@
                 else span.classList.remove('is-lit');
             });
 
-            // Capability highlighting only on large screens
             if (window.innerWidth >= 1024) {
                 const triggerPoint = window.innerHeight * 0.5;
                 const cap1 = document.getElementById('cap-1');
@@ -586,20 +591,19 @@
                 });
                 if (activePhase === 1) {
                     cap1.style.opacity = '1';
-                    cap1.style.borderLeftColor = 'rgba(96, 165, 250, 0.7)';
+                    cap1.style.borderLeftColor = 'rgba(245, 158, 11, 0.75)';
                     label.innerText = "SYSTEM TOPOLOGY // UNIFIED WORKPLACE";
                 } else if (activePhase === 2) {
                     cap2.style.opacity = '1';
-                    cap2.style.borderLeftColor = 'rgba(96, 165, 250, 0.7)';
+                    cap2.style.borderLeftColor = 'rgba(96, 165, 250, 0.75)';
                     label.innerText = "SYSTEM TOPOLOGY // ENTERPRISE CORE";
                 } else {
                     cap3.style.opacity = '1';
-                    cap3.style.borderLeftColor = 'rgba(96, 165, 250, 0.7)';
+                    cap3.style.borderLeftColor = 'rgba(249, 115, 22, 0.75)';
                     label.innerText = "SYSTEM TOPOLOGY // GOVERNANCE FRAMEWORK";
                 }
             }
 
-            // Process card stacking — now runs on ALL screen sizes (including mobile)
             document.querySelectorAll('.process-card').forEach((card) => {
                 const rect = card.getBoundingClientRect();
                 const trigger = window.innerWidth < 640 ? 160 : 220;
