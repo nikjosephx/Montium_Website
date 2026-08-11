@@ -40,7 +40,7 @@
         .bg-grid-pattern {
             background-size: 48px 48px;
             background-image:
-                radial-gradient(circle at 30% 20%, rgba(245, 158, 11, 0.04) 0%, transparent 45%),
+                radial-gradient(circle at 30% 20%, rgba(245, 158, 11, 0.05) 0%, transparent 45%),
                 radial-gradient(circle at 70% 80%, rgba(59, 130, 246, 0.04) 0%, transparent 45%),
                 linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
@@ -51,12 +51,12 @@
             border: 1px solid rgba(255, 255, 255, 0.09);
         }
         .statement__w {
-            color: rgba(255, 255, 255, 0.18);
+            color: rgba(255, 255, 255, 0.22);
             transition: color 0.45s ease, text-shadow 0.45s ease;
         }
         .statement__w.is-lit {
             color: #ffffff;
-            text-shadow: 0 0 22px rgba(245, 158, 11, 0.35);
+            text-shadow: 0 0 24px rgba(245, 158, 11, 0.45);
         }
         canvas { width: 100% !important; height: 100% !important; display: block; }
         @keyframes float {
@@ -118,7 +118,16 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.5;
+            opacity: 0.85;
+        }
+
+        .mission-bg-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.75;
         }
 
         @media (max-width: 1023px) {
@@ -163,47 +172,74 @@
 
     <main class="relative z-10 pt-20 flex-grow">
         
-        <!-- HERO -->
-        <section id="hero" class="relative min-h-[85vh] sm:min-h-[90vh] flex items-center px-5 sm:px-6 py-20 sm:py-28 overflow-hidden">
-            <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2400&auto=format&fit=crop">
-                <source src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4" type="video/mp4">
+        <!-- HERO — tracking shot through modern office -->
+        <section id="hero" class="relative min-h-[88vh] sm:min-h-[92vh] flex items-center px-5 sm:px-6 py-20 sm:py-28 overflow-hidden">
+            <video
+                class="hero-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto"
+                poster="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2400&auto=format&fit=crop"
+            >
+                <source src="https://videos.pexels.com/video-files/8266254/8266254-uhd_2560_1440_25fps.mp4" type="video/mp4">
             </video>
             
-            <div class="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/85 to-brand-black/50 z-[1]"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-brand-black/60 z-[1]"></div>
-            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.08),transparent_50%)] z-[1]"></div>
+            <!-- Lighter overlays so movement stays visible -->
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-black/80 via-brand-black/35 to-transparent z-[1]"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-black/75 via-transparent to-brand-black/25 z-[1]"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.12),transparent_50%)] z-[1]"></div>
             
             <div class="relative z-10 max-w-5xl mx-auto w-full text-left space-y-6 sm:space-y-8">
-                <div class="inline-flex items-center gap-2.5 px-3 py-1.5 bg-white/5 border border-brand-amber/25 rounded-full font-mono text-[10px] sm:text-xs text-brand-gold tracking-widest uppercase backdrop-blur-sm">
+                <div class="inline-flex items-center gap-2.5 px-3 py-1.5 bg-white/5 border border-brand-amber/30 rounded-full font-mono text-[10px] sm:text-xs text-brand-gold tracking-widest uppercase backdrop-blur-sm">
                     <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-brand-amber animate-pulse shadow-[0_0_8px_rgba(245,158,11,0.8)]"></span>
                     Enterprise Technology Consulting
                 </div>
                
-                <h1 class="font-mono text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-white leading-[1.15] max-w-4xl">
+                <h1 class="font-mono text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-white leading-[1.12] max-w-4xl">
                     Delivering the Next Era<br class="hidden sm:block"> of Enterprise
                 </h1>
-                <p class="max-w-xl text-base sm:text-lg text-zinc-300 font-light leading-relaxed">
+                <p class="max-w-xl text-base sm:text-lg text-zinc-200 font-light leading-relaxed">
                     Montium executes complex digital transformations, modernises critical infrastructure, and de-risks mission-critical technology operations for market leaders.
                 </p>
                 <div class="flex flex-col sm:flex-row items-stretch sm:items-start gap-3 sm:gap-4 pt-4 font-mono text-[10px] sm:text-xs tracking-widest uppercase">
-                    <a href="#contact" class="px-6 sm:px-8 py-3.5 sm:py-4 bg-brand-amber text-black font-semibold hover:bg-brand-gold transition-all text-center shadow-[0_0_30px_rgba(245,158,11,0.3)]">
+                    <a href="#contact" class="px-6 sm:px-8 py-3.5 sm:py-4 bg-brand-amber text-black font-semibold hover:bg-brand-gold transition-all text-center shadow-[0_0_30px_rgba(245,158,11,0.35)]">
                         Initiate Engagement
                     </a>
-                    <a href="#capabilities" class="px-6 sm:px-8 py-3.5 sm:py-4 border border-white/20 bg-black/40 text-white font-normal hover:border-brand-amber/50 hover:bg-white/5 transition-all backdrop-blur-sm text-center">
+                    <a href="#capabilities" class="px-6 sm:px-8 py-3.5 sm:py-4 border border-white/25 bg-black/25 text-white font-normal hover:border-brand-amber/50 hover:bg-white/5 transition-all backdrop-blur-sm text-center">
                         Explore Capabilities
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- MISSION -->
-        <section id="mission" class="border-y border-brand-border bg-brand-dark/95 py-14 sm:py-20 md:py-24 px-5 sm:px-6 relative">
-            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(249,115,22,0.04),transparent_60%)]"></div>
-            <div class="relative max-w-5xl mx-auto space-y-5 sm:space-y-7">
-                <p class="font-mono text-[10px] sm:text-xs text-brand-amber/80 tracking-widest uppercase">Our Perspective</p>
-                <p id="lit-statement" class="font-mono text-xl sm:text-2xl md:text-4xl lg:text-5xl font-light tracking-tight leading-snug">
-                    <span class="statement__w">Legacy</span> <span class="statement__w">infrastructure</span> <span class="statement__w">holds</span> <span class="statement__w">businesses</span> <span class="statement__w">back.</span> <span class="statement__w">Montium</span> <span class="statement__w">deploys</span> <span class="statement__w">expert</span> <span class="statement__w">execution</span> <span class="statement__w">teams</span> <span class="statement__w">to</span> <span class="statement__w">modernise</span> <span class="statement__w">complex</span> <span class="statement__w">tech</span> <span class="statement__w">ecosystems,</span> <span class="statement__w">unlocking</span> <span class="statement__w">operational</span> <span class="statement__w">energy,</span> <span class="statement__w">securing</span> <span class="statement__w">data</span> <span class="statement__w">sovereignty</span> <span class="statement__w">and</span> <span class="statement__w">speeding</span> <span class="statement__w">up</span> <span class="statement__w">time</span> <span class="statement__w">to</span> <span class="statement__w">market.</span>
-                </p>
+        <!-- MISSION — full-bleed video at 75% opacity -->
+        <section id="mission" class="relative border-y border-brand-border overflow-hidden min-h-[70vh] sm:min-h-[75vh] flex items-center">
+            <video
+                class="mission-bg-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto"
+                poster="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1800&auto=format&fit=crop"
+            >
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-group-of-business-people-working-in-an-office-4272-large.mp4" type="video/mp4">
+            </video>
+            
+            <!-- Soft gradients so the 75% video stays bright and readable -->
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-black/75 via-brand-black/55 to-brand-black/25 z-[1]"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-black/50 via-transparent to-brand-black/30 z-[1]"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_left,rgba(245,158,11,0.06),transparent_55%)] z-[1]"></div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-16 sm:py-20 md:py-24 w-full">
+                <div class="max-w-2xl space-y-6 sm:space-y-8">
+                    <p class="font-mono text-[10px] sm:text-xs text-brand-amber/90 tracking-widest uppercase">Mission</p>
+                    <p id="lit-statement" class="font-mono text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-light tracking-tight leading-[1.25]">
+                        <span class="statement__w">Legacy</span> <span class="statement__w">infrastructure</span> <span class="statement__w">holds</span> <span class="statement__w">businesses</span> <span class="statement__w">back.</span> <span class="statement__w">Montium</span> <span class="statement__w">deploys</span> <span class="statement__w">teams</span> <span class="statement__w">to</span> <span class="statement__w">modernise</span> <span class="statement__w">complex</span> <span class="statement__w">ecosystems,</span> <span class="statement__w">unlocking</span> <span class="statement__w">operational</span> <span class="statement__w">efficiency</span> <span class="statement__w">and</span> <span class="statement__w">enhancing</span> <span class="statement__w">data</span> <span class="statement__w">sovereignty.</span>
+                    </p>
+                </div>
             </div>
         </section>
 
@@ -256,12 +292,12 @@
                     </div>
                 </div>
 
-                <div id="canvas-card" class="lg:col-span-6 lg:sticky lg:top-28 h-[320px] sm:h-[420px] lg:h-[520px] glass-panel rounded-2xl overflow-hidden flex flex-col justify-between p-5 sm:p-6 transition-all duration-700 shadow-2xl shadow-amber-500/10">
-                    <div class="absolute inset-0 opacity-55 bg-[url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1800&auto=format&fit=crop')] bg-cover bg-center z-0"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/60 to-brand-black/30 z-0"></div>
+                <div id="canvas-card" class="lg:col-span-6 lg:sticky lg:top-28 h-[320px] sm:h-[420px] lg:h-[520px] glass-panel rounded-2xl overflow-hidden flex flex-col justify-between p-5 sm:p-6 transition-all duration-700 shadow-2xl shadow-amber-500/15 border border-brand-amber/10">
+                    <div class="absolute inset-0 bg-gradient-to-br from-brand-amber/10 via-transparent to-brand-blue/10 z-0"></div>
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(245,158,11,0.08),transparent_65%)] z-0"></div>
                     
                     <div class="flex justify-between items-center font-mono text-[10px] sm:text-xs text-white border-b border-white/10 pb-3 sm:pb-4 z-10">
-                        <span id="canvas-label" class="font-medium tracking-wide truncate pr-2">SYSTEM TOPOLOGY // UNIFIED WORKPLACE</span>
+                        <span id="canvas-label" class="font-medium tracking-wide truncate pr-2">LIVE SYSTEM MODEL // WORKPLACE CORE</span>
                         <span class="text-brand-gold bg-brand-amber/15 border border-brand-amber/40 px-2 py-0.5 rounded text-[9px] sm:text-[10px] shrink-0">ACTIVE</span>
                     </div>
                    
@@ -269,7 +305,7 @@
                    
                     <div class="z-10 font-mono text-[9px] sm:text-[10px] text-zinc-400 uppercase flex justify-between tracking-widest pt-3 sm:pt-4 border-t border-white/10">
                         <span>[ Interactive Model ]</span>
-                        <span id="canvas-coords">System Topology Viz</span>
+                        <span id="canvas-coords">Real-time Topology</span>
                     </div>
                 </div>
             </div>
@@ -505,63 +541,69 @@
             else header.classList.remove('scrolled');
         });
 
+        document.querySelectorAll('video').forEach(v => {
+            v.play().catch(() => {});
+        });
+
         const container = document.getElementById('canvas-container');
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
-        camera.position.z = 8;
-        camera.position.y = 1;
-        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-        renderer.setSize(container.clientWidth, container.clientHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        container.appendChild(renderer.domElement);
-        const objectGroup = new THREE.Group();
-        scene.add(objectGroup);
-
-        const particlesGeo = new THREE.BufferGeometry();
-        const count = 900;
-        const positions = new Float32Array(count * 3);
-        for(let i=0; i<count; i++) {
-            positions[i*3] = (Math.random() - 0.5) * 22;
-            positions[i*3+1] = (Math.random() - 0.5) * 12;
-            positions[i*3+2] = (Math.random() - 0.5) * 22;
-        }
-        particlesGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-        const particlesMat = new THREE.PointsMaterial({
-            size: 0.07, color: 0xf59e0b, transparent: true, opacity: 0.5, blending: THREE.AdditiveBlending
-        });
-        const particleMesh = new THREE.Points(particlesGeo, particlesMat);
-        objectGroup.add(particleMesh);
-       
-        const coreGeo = new THREE.IcosahedronGeometry(1.1, 1);
-        const coreMat = new THREE.MeshBasicMaterial({ color: 0xfbbf24, wireframe: true, transparent: true, opacity: 0.2 });
-        const coreMesh = new THREE.Mesh(coreGeo, coreMat);
-        objectGroup.add(coreMesh);
-
-        let mouseX = 0, mouseY = 0;
-        window.addEventListener('mousemove', (e) => {
-            mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
-            mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
-        });
-        function animate() {
-            requestAnimationFrame(animate);
-            scene.rotation.x += (mouseY * 0.08 - scene.rotation.x) * 0.04;
-            scene.rotation.y += (mouseX * 0.08 - scene.rotation.y) * 0.04;
-            const pos = particleMesh.geometry.attributes.position.array;
-            for(let i=2; i<count*3; i+=3) {
-                pos[i] += 0.035;
-                if (pos[i] > 11) pos[i] = -11;
-            }
-            particleMesh.geometry.attributes.position.needsUpdate = true;
-            coreMesh.rotation.y -= 0.004;
-            coreMesh.rotation.x -= 0.002;
-            renderer.render(scene, camera);
-        }
-        animate();
-        window.addEventListener('resize', () => {
-            camera.aspect = container.clientWidth / container.clientHeight;
-            camera.updateProjectionMatrix();
+        if (container) {
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+            camera.position.z = 8;
+            camera.position.y = 1;
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
             renderer.setSize(container.clientWidth, container.clientHeight);
-        });
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            container.appendChild(renderer.domElement);
+            const objectGroup = new THREE.Group();
+            scene.add(objectGroup);
+
+            const particlesGeo = new THREE.BufferGeometry();
+            const count = 1100;
+            const positions = new Float32Array(count * 3);
+            for(let i=0; i<count; i++) {
+                positions[i*3] = (Math.random() - 0.5) * 24;
+                positions[i*3+1] = (Math.random() - 0.5) * 14;
+                positions[i*3+2] = (Math.random() - 0.5) * 24;
+            }
+            particlesGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            const particlesMat = new THREE.PointsMaterial({
+                size: 0.08, color: 0xf59e0b, transparent: true, opacity: 0.55, blending: THREE.AdditiveBlending
+            });
+            const particleMesh = new THREE.Points(particlesGeo, particlesMat);
+            objectGroup.add(particleMesh);
+           
+            const coreGeo = new THREE.IcosahedronGeometry(1.2, 1);
+            const coreMat = new THREE.MeshBasicMaterial({ color: 0xfbbf24, wireframe: true, transparent: true, opacity: 0.25 });
+            const coreMesh = new THREE.Mesh(coreGeo, coreMat);
+            objectGroup.add(coreMesh);
+
+            let mouseX = 0, mouseY = 0;
+            window.addEventListener('mousemove', (e) => {
+                mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+                mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+            });
+            function animate() {
+                requestAnimationFrame(animate);
+                scene.rotation.x += (mouseY * 0.08 - scene.rotation.x) * 0.04;
+                scene.rotation.y += (mouseX * 0.08 - scene.rotation.y) * 0.04;
+                const pos = particleMesh.geometry.attributes.position.array;
+                for(let i=2; i<count*3; i+=3) {
+                    pos[i] += 0.04;
+                    if (pos[i] > 12) pos[i] = -12;
+                }
+                particleMesh.geometry.attributes.position.needsUpdate = true;
+                coreMesh.rotation.y -= 0.005;
+                coreMesh.rotation.x -= 0.0025;
+                renderer.render(scene, camera);
+            }
+            animate();
+            window.addEventListener('resize', () => {
+                camera.aspect = container.clientWidth / container.clientHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(container.clientWidth, container.clientHeight);
+            });
+        }
 
         window.addEventListener('scroll', () => {
             const spans = document.querySelectorAll('.statement__w');
@@ -578,29 +620,29 @@
                 const cap2 = document.getElementById('cap-2');
                 const cap3 = document.getElementById('cap-3');
                 const label = document.getElementById('canvas-label');
-                const c2Box = cap2.getBoundingClientRect();
-                const c3Box = cap3.getBoundingClientRect();
-                
-                let activePhase = 1;
-                if (c3Box.top <= triggerPoint) activePhase = 3;
-                else if (c2Box.top <= triggerPoint) activePhase = 2;
-
-                [cap1, cap2, cap3].forEach(cap => {
-                    cap.style.opacity = '0.4';
-                    cap.style.borderLeftColor = 'transparent';
-                });
-                if (activePhase === 1) {
-                    cap1.style.opacity = '1';
-                    cap1.style.borderLeftColor = 'rgba(245, 158, 11, 0.75)';
-                    label.innerText = "SYSTEM TOPOLOGY // UNIFIED WORKPLACE";
-                } else if (activePhase === 2) {
-                    cap2.style.opacity = '1';
-                    cap2.style.borderLeftColor = 'rgba(96, 165, 250, 0.75)';
-                    label.innerText = "SYSTEM TOPOLOGY // ENTERPRISE CORE";
-                } else {
-                    cap3.style.opacity = '1';
-                    cap3.style.borderLeftColor = 'rgba(249, 115, 22, 0.75)';
-                    label.innerText = "SYSTEM TOPOLOGY // GOVERNANCE FRAMEWORK";
+                if (cap1 && cap2 && cap3) {
+                    const c2Box = cap2.getBoundingClientRect();
+                    const c3Box = cap3.getBoundingClientRect();
+                    let activePhase = 1;
+                    if (c3Box.top <= triggerPoint) activePhase = 3;
+                    else if (c2Box.top <= triggerPoint) activePhase = 2;
+                    [cap1, cap2, cap3].forEach(cap => {
+                        cap.style.opacity = '0.4';
+                        cap.style.borderLeftColor = 'transparent';
+                    });
+                    if (activePhase === 1) {
+                        cap1.style.opacity = '1';
+                        cap1.style.borderLeftColor = 'rgba(245, 158, 11, 0.75)';
+                        if (label) label.innerText = "LIVE SYSTEM MODEL // WORKPLACE CORE";
+                    } else if (activePhase === 2) {
+                        cap2.style.opacity = '1';
+                        cap2.style.borderLeftColor = 'rgba(96, 165, 250, 0.75)';
+                        if (label) label.innerText = "LIVE SYSTEM MODEL // ENTERPRISE CORE";
+                    } else {
+                        cap3.style.opacity = '1';
+                        cap3.style.borderLeftColor = 'rgba(249, 115, 22, 0.75)';
+                        if (label) label.innerText = "LIVE SYSTEM MODEL // GOVERNANCE CORE";
+                    }
                 }
             }
 
