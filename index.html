@@ -124,7 +124,7 @@
         }
         .scrub-text {
             position: relative; z-index: 10;
-            width: min(32%, 360px); flex-shrink: 0;
+            width: min(36%, 400px); flex-shrink: 0;
             height: 100%; display: flex; flex-direction: column;
             justify-content: space-between;
             padding: clamp(1.5rem, 3.5vw, 2.75rem);
@@ -157,19 +157,6 @@
             letter-spacing: -0.02em; line-height: 1.25; color: #fff; margin-bottom: 0.5rem;
         }
         .scrub-sub { font-size: 0.9rem; color: rgba(161, 161, 170, 0.9); line-height: 1.5; font-weight: 300; }
-        .scrub-progress-track {
-            height: 2px; background: rgba(255,255,255,0.1); border-radius: 2px;
-            overflow: hidden; margin-top: 1.5rem;
-        }
-        .scrub-progress-fill {
-            height: 100%; width: 0%;
-            background: linear-gradient(90deg, #F59E0B, #FBBF24); border-radius: 2px;
-        }
-        .scrub-progress-meta {
-            display: flex; justify-content: space-between; margin-top: 0.45rem;
-            font-family: 'Inter', system-ui, sans-serif; font-size: 0.65rem;
-            letter-spacing: 0.06em; color: rgba(161, 161, 170, 0.7);
-        }
         .scrub-video-stage {
             position: relative; flex: 1; height: 100%; min-height: 100%; background: #000;
         }
@@ -187,6 +174,22 @@
             content: ""; position: absolute; inset: 0; pointer-events: none;
             background: radial-gradient(ellipse at 70% 50%, transparent 45%, rgba(0,0,0,0.3) 100%);
             z-index: 2;
+        }
+        /* Cover Grok watermark (bottom-right) */
+        .scrub-video-stage .wm-cover {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: min(28%, 220px);
+            height: min(18%, 90px);
+            z-index: 4;
+            pointer-events: none;
+            background: linear-gradient(
+                to top left,
+                rgba(0, 0, 0, 0.92) 0%,
+                rgba(0, 0, 0, 0.55) 45%,
+                transparent 75%
+            );
         }
         @media (max-width: 820px) {
             .scrub-section { height: 150vh; }
@@ -227,7 +230,6 @@
             <nav class="hidden lg:flex items-center gap-8 font-mono text-xs uppercase tracking-widest text-brand-silver">
                 <a href="#hero" class="hover:text-white transition-colors">Overview</a>
                 <a href="#mission" class="hover:text-white transition-colors">Mission</a>
-                <a href="#sequence" class="hover:text-white transition-colors">Sequence</a>
                 <a href="#capabilities" class="hover:text-white transition-colors">Capabilities</a>
                 <a href="#process" class="hover:text-white transition-colors">Process</a>
                 <a href="#contact" class="hover:text-white transition-colors">Engagement</a>
@@ -271,70 +273,39 @@
             </div>
         </section>
         <!-- SCROLL SEQUENCE -->
-        <section id="sequence" class="scrub-section border-b border-brand-border">
+        <!-- CAPABILITIES + VIDEO SEQUENCE (combined) -->
+        <section id="capabilities" class="scrub-section border-y border-brand-border">
             <div class="scrub-sticky">
+                <!-- LEFT: capability context -->
                 <aside class="scrub-text">
-                    <div class="scrub-labels-row flex flex-col gap-2.5">
-                        <span class="scrub-label" data-chapter="0">01 Legacy</span>
-                        <span class="scrub-label" data-chapter="1">02 Modern</span>
-                        <span class="scrub-label" data-chapter="2">03 AI</span>
-                    </div>
                     <div>
-                        <div class="scrub-title" id="scrubTitle">Legacy Systems</div>
-                        <div class="scrub-sub" id="scrubSub">Dense, constrained, analogue-digital friction</div>
-                        <div class="scrub-progress-track"><div class="scrub-progress-fill" id="scrubFill"></div></div>
-                        <div class="scrub-progress-meta">
-                            <span id="scrubLabel">Chapter 1 of 3</span>
-                            <span id="scrubPct">0%</span>
+                        <p class="font-mono text-[10px] tracking-widest uppercase text-brand-amber/80 mb-3">Practice Areas</p>
+                        <div class="scrub-labels-row flex flex-col gap-2.5 mb-6">
+                            <span class="scrub-label" data-chapter="0">01 Legacy</span>
+                            <span class="scrub-label" data-chapter="1">02 Modern</span>
+                            <span class="scrub-label" data-chapter="2">03 AI</span>
                         </div>
                     </div>
+
+                    <div>
+                        <p class="font-mono text-[10px] tracking-widest uppercase mb-2 opacity-70" id="scrubKicker">Digital & Workplace</p>
+                        <div class="scrub-title" id="scrubTitle">Legacy systems drain energy.</div>
+                        <div class="scrub-sub" id="scrubSub">We unify complex environments so people and technology move at the same speed — consolidating estates, hardening foundations, and removing the drag of outdated platforms.</div>
+                        <ul class="pt-4 space-y-1.5 font-mono text-xs text-zinc-500" id="scrubBullets">
+                            <li>Environment consolidation</li>
+                            <li>Cloud & security foundation</li>
+                            <li>Workforce acceleration</li>
+                        </ul>
+
+                    </div>
                 </aside>
+
+                <!-- RIGHT: video full height -->
                 <div class="scrub-video-stage">
+                    <div class="wm-cover" aria-hidden="true"></div>
                     <video id="scrubV1" muted playsinline preload="none" data-src="https://res.cloudinary.com/rudgu9nf/video/upload/v1786521255/grok-video-e47bc0b9-7603-4d5f-a7cd-2a771638c7c7_1.mp4"></video>
                     <video id="scrubV2" muted playsinline preload="none" data-src="https://res.cloudinary.com/rudgu9nf/video/upload/v1786521271/grok-video-287b616f-ea54-4c91-9d73-35afdcfbf025_1.mp4"></video>
                     <video id="scrubV3" muted playsinline preload="none" data-src="https://res.cloudinary.com/rudgu9nf/video/upload/v1786521348/grok-video-577668dd-fa1b-42aa-bf9b-9e6339448b19_1.mp4"></video>
-                </div>
-            </div>
-        </section>
-        <section id="capabilities" class="py-20 sm:py-28 md:py-32 px-5 sm:px-6 max-w-4xl mx-auto">
-            <div class="space-y-4 mb-16 sm:mb-20">
-                <p class="font-mono text-[10px] sm:text-xs text-brand-amber/80 tracking-widest uppercase">Practice Areas</p>
-                <h2 class="font-mono text-3xl sm:text-4xl md:text-5xl font-light tracking-tight leading-tight">What holds organisations back.</h2>
-                <p class="text-base sm:text-lg text-zinc-400 font-light max-w-xl pt-2">We remove the friction that slows progress.</p>
-            </div>
-            <div class="space-y-16 sm:space-y-20 md:space-y-24">
-                <div class="space-y-5 border-l border-brand-sky/40 pl-6 sm:pl-8">
-                    <p class="font-mono text-[10px] sm:text-xs text-brand-sky/90 tracking-widest uppercase">Architecture</p>
-                    <h3 class="font-mono text-2xl sm:text-3xl font-light text-white tracking-tight">Complexity freezes progress.</h3>
-                    <p class="text-base sm:text-lg text-zinc-300 font-light leading-relaxed max-w-2xl">
-                        Modern architecture should be clear, resilient, and deliberately scalable — not a tangle of point solutions. We design target-state systems that separate concerns, absorb change without breaking, and give leaders room to grow without rewriting the foundation every two years.
-                    </p>
-                    <ul class="pt-2 space-y-2 font-mono text-sm text-zinc-500">
-                        <li>Target-state design & reference architectures</li>
-                        <li>Systems integration & interface clarity</li>
-                        <li>Data sovereignty, resilience & failure domains</li>
-                        <li>Scalable patterns for growth and recovery</li>
-                    </ul>
-                </div>
-                <div class="space-y-5 border-l border-brand-amber/40 pl-6 sm:pl-8">
-                    <p class="font-mono text-[10px] sm:text-xs text-brand-gold/90 tracking-widest uppercase">Digital & Workplace</p>
-                    <h3 class="font-mono text-2xl sm:text-3xl font-light text-white tracking-tight">Legacy systems drain energy.</h3>
-                    <p class="text-base sm:text-lg text-zinc-300 font-light leading-relaxed max-w-2xl">We unify complex environments so people and technology move at the same speed.</p>
-                    <ul class="pt-2 space-y-2 font-mono text-sm text-zinc-500">
-                        <li>Environment consolidation</li>
-                        <li>Cloud & security foundation</li>
-                        <li>Workforce acceleration</li>
-                    </ul>
-                </div>
-                <div class="space-y-5 border-l border-brand-ember/40 pl-6 sm:pl-8">
-                    <p class="font-mono text-[10px] sm:text-xs text-brand-ember/90 tracking-widest uppercase">Governance & Delivery</p>
-                    <h3 class="font-mono text-2xl sm:text-3xl font-light text-white tracking-tight">Ambition dies in poor execution.</h3>
-                    <p class="text-base sm:text-lg text-zinc-300 font-light leading-relaxed max-w-2xl">We put structure around high-stakes work so outcomes actually land.</p>
-                    <ul class="pt-2 space-y-2 font-mono text-sm text-zinc-500">
-                        <li>Delivery leadership</li>
-                        <li>Risk & assurance</li>
-                        <li>Strategic advisory</li>
-                    </ul>
                 </div>
             </div>
         </section>
@@ -567,17 +538,32 @@
             const videos = [document.getElementById("scrubV1"), document.getElementById("scrubV2"), document.getElementById("scrubV3")];
             if (!videos[0]) return;
             const chapters = [
-                { title: "Legacy Systems", sub: "Dense, constrained, analogue-digital friction" },
-                { title: "Modern Architecture", sub: "Clear, resilient, deliberately scalable" },
-                { title: "AI Systems", sub: "Advancement, structure & security" }
+                {
+                    kicker: "Digital & Workplace",
+                    title: "Legacy systems drain energy.",
+                    sub: "We unify complex environments so people and technology move at the same speed — consolidating estates, hardening foundations, and removing the drag of outdated platforms.",
+                    bullets: ["Environment consolidation", "Cloud & security foundation", "Workforce acceleration"]
+                },
+                {
+                    kicker: "Architecture",
+                    title: "Complexity freezes progress.",
+                    sub: "Modern architecture should be clear, resilient, and deliberately scalable — not a tangle of point solutions. We design target-state systems that separate concerns, absorb change, and leave room to grow.",
+                    bullets: ["Target-state design & reference architectures", "Systems integration & interface clarity", "Data sovereignty, resilience & failure domains", "Scalable patterns for growth and recovery"]
+                },
+                {
+                    kicker: "Governance & Delivery",
+                    title: "Ambition dies in poor execution.",
+                    sub: "We put structure around high-stakes work so outcomes actually land — with delivery leadership, assurance, and advisory that keeps AI and modern systems accountable.",
+                    bullets: ["Delivery leadership", "Risk & assurance", "Strategic advisory"]
+                }
             ];
             const labels = document.querySelectorAll(".scrub-label");
             const titleEl = document.getElementById("scrubTitle");
             const subEl = document.getElementById("scrubSub");
-            const progressFill = document.getElementById("scrubFill");
-            const progressLabel = document.getElementById("scrubLabel");
-            const progressPct = document.getElementById("scrubPct");
-            const section = document.getElementById("sequence");
+            const progressFill = null;
+            const progressLabel = null;
+            const progressPct = null;
+            const section = document.getElementById("capabilities");
             const durations = [10.04, 10.04, 10.04];
             let activeIndex = -1, frameId = null;
             const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) || (window.matchMedia && window.matchMedia("(max-width: 820px)").matches);
@@ -595,6 +581,9 @@
                 if (total <= 1) return 0;
                 return Math.min(Math.max(-rect.top / total, 0), 1);
             }
+            const kickerEl = document.getElementById("scrubKicker");
+            const bulletsEl = document.getElementById("scrubBullets");
+
             function setActive(index) {
                 if (index === activeIndex) return;
                 activeIndex = index;
@@ -604,15 +593,19 @@
                     if (!on && !v.paused) { try { v.pause(); } catch (e) {} }
                 });
                 labels.forEach((l, i) => l.classList.toggle("is-current", i === index));
-                if (titleEl) titleEl.textContent = chapters[index].title;
-                if (subEl) subEl.textContent = chapters[index].sub;
-                if (progressLabel) progressLabel.textContent = "Chapter " + (index + 1) + " of 3";
+                const ch = chapters[index];
+                if (kickerEl) kickerEl.textContent = ch.kicker;
+                if (titleEl) titleEl.textContent = ch.title;
+                if (subEl) subEl.textContent = ch.sub;
+                if (bulletsEl && ch.bullets) {
+                    bulletsEl.innerHTML = ch.bullets.map(b => "<li>" + b + "</li>").join("");
+                }
+                
             }
             function update() {
                 frameId = null;
                 const p = getProgress();
-                if (progressFill) progressFill.style.width = (p * 100).toFixed(1) + "%";
-                if (progressPct) progressPct.textContent = Math.round(p * 100) + "%";
+                
                 const weights = [0.25, 0.30, 0.45];
                 let index = 0, local = 0, acc = 0;
                 for (let i = 0; i < 3; i++) {
