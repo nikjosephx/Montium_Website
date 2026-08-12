@@ -175,16 +175,21 @@
         <!-- HERO — tracking shot through modern office -->
         <section id="hero" class="relative min-h-[88vh] sm:min-h-[92vh] flex items-center px-5 sm:px-6 py-20 sm:py-28 overflow-hidden">
             <video
-                class="hero-video"
-                autoplay
-                muted
-                loop
-                playsinline
-                preload="auto"
-                poster="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2400&auto=format&fit=crop"
-            >
-                <source src="https://videos.pexels.com/video-files/8266254/8266254-uhd_2560_1440_25fps.mp4" type="video/mp4">
-            </video>
+    class="hero-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+    poster="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2400&auto=format&fit=crop"
+>
+    <source src="https://res.cloudinary.com/rudgu9nf/video/upload/v1786495893/grok-video-eca82c22-1600-4278-b2c8-326c745f2e58_1.mp4" type="video/mp4">
+</video>
+
+<!-- Lighter overlays so the fly-through stays bright and visible -->
+<div class="absolute inset-0 bg-gradient-to-r from-brand-black/80 via-brand-black/35 to-transparent z-[1]"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-brand-black/75 via-transparent to-brand-black/25 z-[1]"></div>
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.12),transparent_50%)] z-[1]"></div>
             
             <!-- Lighter overlays so movement stays visible -->
             <div class="absolute inset-0 bg-gradient-to-r from-brand-black/80 via-brand-black/35 to-transparent z-[1]"></div>
