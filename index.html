@@ -7,14 +7,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        mono: ['Space Grotesk', 'sans-serif'],
+                        mono: ['Inter', 'sans-serif'],
                     },
                     colors: {
                         brand: {
@@ -124,7 +124,7 @@
         }
         .scrub-text {
             position: relative; z-index: 10;
-            width: min(40%, 440px); flex-shrink: 0;
+            width: min(32%, 360px); flex-shrink: 0;
             height: 100%; display: flex; flex-direction: column;
             justify-content: space-between;
             padding: clamp(1.5rem, 3.5vw, 2.75rem);
@@ -135,7 +135,7 @@
             pointer-events: none;
         }
         .scrub-label {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Inter', system-ui, sans-serif;
             font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase;
             color: rgba(161, 161, 170, 0.7); opacity: 0.45;
             transition: opacity 0.3s ease, color 0.3s ease;
@@ -152,8 +152,8 @@
             box-shadow: 0 0 10px rgba(251, 191, 36, 0.7);
         }
         .scrub-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(1.35rem, 2.6vw, 1.85rem); font-weight: 400;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: clamp(1.35rem, 2.6vw, 1.85rem); font-weight: 500;
             letter-spacing: -0.02em; line-height: 1.25; color: #fff; margin-bottom: 0.5rem;
         }
         .scrub-sub { font-size: 0.9rem; color: rgba(161, 161, 170, 0.9); line-height: 1.5; font-weight: 300; }
@@ -167,7 +167,7 @@
         }
         .scrub-progress-meta {
             display: flex; justify-content: space-between; margin-top: 0.45rem;
-            font-family: 'Space Grotesk', sans-serif; font-size: 0.65rem;
+            font-family: 'Inter', system-ui, sans-serif; font-size: 0.65rem;
             letter-spacing: 0.06em; color: rgba(161, 161, 170, 0.7);
         }
         .scrub-video-stage {
@@ -303,6 +303,19 @@
                 <p class="text-base sm:text-lg text-zinc-400 font-light max-w-xl pt-2">We remove the friction that slows progress.</p>
             </div>
             <div class="space-y-16 sm:space-y-20 md:space-y-24">
+                <div class="space-y-5 border-l border-brand-sky/40 pl-6 sm:pl-8">
+                    <p class="font-mono text-[10px] sm:text-xs text-brand-sky/90 tracking-widest uppercase">Architecture</p>
+                    <h3 class="font-mono text-2xl sm:text-3xl font-light text-white tracking-tight">Complexity freezes progress.</h3>
+                    <p class="text-base sm:text-lg text-zinc-300 font-light leading-relaxed max-w-2xl">
+                        Modern architecture should be clear, resilient, and deliberately scalable — not a tangle of point solutions. We design target-state systems that separate concerns, absorb change without breaking, and give leaders room to grow without rewriting the foundation every two years.
+                    </p>
+                    <ul class="pt-2 space-y-2 font-mono text-sm text-zinc-500">
+                        <li>Target-state design & reference architectures</li>
+                        <li>Systems integration & interface clarity</li>
+                        <li>Data sovereignty, resilience & failure domains</li>
+                        <li>Scalable patterns for growth and recovery</li>
+                    </ul>
+                </div>
                 <div class="space-y-5 border-l border-brand-amber/40 pl-6 sm:pl-8">
                     <p class="font-mono text-[10px] sm:text-xs text-brand-gold/90 tracking-widest uppercase">Digital & Workplace</p>
                     <h3 class="font-mono text-2xl sm:text-3xl font-light text-white tracking-tight">Legacy systems drain energy.</h3>
@@ -311,16 +324,6 @@
                         <li>Environment consolidation</li>
                         <li>Cloud & security foundation</li>
                         <li>Workforce acceleration</li>
-                    </ul>
-                </div>
-                <div class="space-y-5 border-l border-brand-sky/40 pl-6 sm:pl-8">
-                    <p class="font-mono text-[10px] sm:text-xs text-brand-sky/90 tracking-widest uppercase">Architecture</p>
-                    <h3 class="font-mono text-2xl sm:text-3xl font-light text-white tracking-tight">Complexity freezes progress.</h3>
-                    <p class="text-base sm:text-lg text-zinc-300 font-light leading-relaxed max-w-2xl">We design clear, resilient architectures that give leaders the freedom to scale.</p>
-                    <ul class="pt-2 space-y-2 font-mono text-sm text-zinc-500">
-                        <li>Target-state design</li>
-                        <li>Systems integration</li>
-                        <li>Data sovereignty & resilience</li>
                     </ul>
                 </div>
                 <div class="space-y-5 border-l border-brand-ember/40 pl-6 sm:pl-8">
