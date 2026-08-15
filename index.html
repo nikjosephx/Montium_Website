@@ -3,18 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Montium | Technology Advisory & Delivery</title>
+    <title>Montium | Strategic Technology Advisory & Execution</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['Inter', 'sans-serif'],
+                        sans: [
+                            '-apple-system', 
+                            'BlinkMacSystemFont', 
+                            'Segoe UI', 
+                            'Roboto', 
+                            'Helvetica Neue', 
+                            'Arial', 
+                            'sans-serif'
+                        ],
+                        mono: ['Space Grotesk', 'sans-serif'],
                     },
                     colors: {
                         brand: {
@@ -22,7 +31,7 @@
                             dark: '#0E0B12',
                             card: '#16131C',
                             silver: '#A1A1AA',
-                            border: 'rgba(255, 255, 255, 0.09)',
+                            border: 'rgba(255, 255, 255, 0.08)',
                             amber: '#F59E0B',
                             gold: '#FBBF24',
                             ember: '#F97316',
@@ -36,51 +45,27 @@
     </script>
     <style>
         .bg-grid-pattern {
-            background-size: 48px 48px;
+            background-size: 64px 64px;
             background-image:
-                radial-gradient(circle at 30% 20%, rgba(245, 158, 11, 0.05) 0%, transparent 45%),
-                radial-gradient(circle at 70% 80%, rgba(59, 130, 246, 0.04) 0%, transparent 45%),
-                linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+                linear-gradient(to right, rgba(255, 255, 255, 0.012) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
         }
         .glass-panel {
-            background: rgba(14, 11, 18, 0.78);
-            backdrop-filter: blur(24px);
-            border: 1px solid rgba(255, 255, 255, 0.09);
+            background: rgba(14, 11, 18, 0.72);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
         }
         .statement__w {
             color: rgba(255, 255, 255, 0.22);
-            transition: color 0.45s ease, text-shadow 0.45s ease;
+            transition: color 0.5s ease, text-shadow 0.5s ease;
         }
         .statement__w.is-lit {
             color: #ffffff;
-            text-shadow: 0 0 24px rgba(245, 158, 11, 0.45);
+            text-shadow: 0 0 20px rgba(245, 158, 11, 0.35);
         }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        .animate-float { animation: float 5.5s ease-in-out infinite; }
-        @keyframes scanline {
-            0% { transform: translateY(-100%); opacity: 0; }
-            12% { opacity: 1; }
-            88% { opacity: 1; }
-            100% { transform: translateY(220%); opacity: 0; }
-        }
-        .animate-scanline { animation: scanline 3.2s linear infinite; }
-        @keyframes spin-slow { 100% { transform: rotate(360deg); } }
-        .animate-spin-slow { animation: spin-slow 14s linear infinite; }
-        .animate-spin-reverse { animation: spin-slow 18s linear infinite reverse; }
-        @keyframes slide-right {
-            0% { transform: translateX(-12px); opacity: 0; }
-            50% { opacity: 1; }
-            100% { transform: translateX(12px); opacity: 0; }
-        }
-        .animate-slide-1 { animation: slide-right 2.1s infinite; }
-        .animate-slide-2 { animation: slide-right 2.1s infinite 0.35s; }
-        .animate-slide-3 { animation: slide-right 2.1s infinite 0.7s; }
-        #main-header { transition: height 0.35s ease; }
-        #main-header .header-inner { transition: height 0.35s ease; }
+
+        #main-header { transition: height 0.3s ease; }
+        #main-header .header-inner { transition: height 0.3s ease; }
         #main-header.scrolled { height: 3.5rem; }
         #main-header.scrolled .header-inner { height: 3.5rem; }
         #main-header.scrolled .nav-cta {
@@ -88,11 +73,12 @@
             padding-bottom: 0.4rem;
             font-size: 0.65rem;
         }
+
         .logo-full {
-            transition: opacity 0.35s ease, transform 0.35s ease, filter 0.35s ease;
+            transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease;
         }
         .logo-mark {
-            transition: opacity 0.35s ease, transform 0.35s ease;
+            transition: opacity 0.3s ease, transform 0.3s ease;
             font-weight: 600;
             letter-spacing: -0.04em;
         }
@@ -106,490 +92,367 @@
             opacity: 1;
             transform: translateY(-50%) scale(1);
         }
-        .hero-video {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.92;
-        }
-        /* SCRUB SEQUENCE */
-        .scrub-section { position: relative; height: 160vh; }
-        .scrub-sticky {
-            position: sticky; top: 0;
-            height: 100vh; height: 100dvh;
-            width: 100%; display: flex;
-            background: #07050A; overflow: hidden;
-        }
-        .scrub-text {
-            position: relative; z-index: 10;
-            width: min(36%, 400px); flex-shrink: 0;
-            height: 100%; display: flex; flex-direction: column;
-            justify-content: space-between;
-            padding: clamp(1.5rem, 3.5vw, 2.75rem);
-            background: rgba(7, 5, 10, 0.82);
-            backdrop-filter: blur(20px) saturate(1.2);
-            -webkit-backdrop-filter: blur(20px) saturate(1.2);
-            border-right: 1px solid rgba(255, 255, 255, 0.09);
-            pointer-events: none;
-        }
-        .scrub-label {
-            font-family: 'Inter', system-ui, sans-serif;
-            font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase;
-            color: rgba(161, 161, 170, 0.7); opacity: 0.45;
-            transition: opacity 0.3s ease, color 0.3s ease;
-            display: flex; align-items: center; gap: 0.5rem;
-        }
-        .scrub-label::before {
-            content: ""; width: 6px; height: 6px; border-radius: 50%;
-            background: currentColor; opacity: 0.5;
-            transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .scrub-label.is-current { color: #FBBF24; opacity: 1; }
-        .scrub-label.is-current::before {
-            opacity: 1; transform: scale(1.25);
-            box-shadow: 0 0 10px rgba(251, 191, 36, 0.7);
-        }
-        .scrub-title {
-            font-family: 'Inter', system-ui, sans-serif;
-            font-size: clamp(1.35rem, 2.6vw, 1.85rem); font-weight: 500;
-            letter-spacing: -0.02em; line-height: 1.25; color: #fff; margin-bottom: 0.5rem;
-        }
-        .scrub-sub { font-size: 0.9rem; color: rgba(161, 161, 170, 0.9); line-height: 1.5; font-weight: 300; }
-        .scrub-video-stage {
-            position: relative; flex: 1; height: 100%; min-height: 100%; background: #000;
-        }
-        .scrub-video-stage video {
-            position: absolute; inset: 0; width: 100%; height: 100%;
-            object-fit: cover; opacity: 0; visibility: hidden;
-        }
-        .scrub-video-stage video.is-active { opacity: 1; visibility: visible; z-index: 1; }
-        .scrub-video-stage::before {
-            content: ""; position: absolute; top: 0; left: 0; bottom: 0; width: 80px;
-            background: linear-gradient(to right, rgba(7,5,10,0.5), transparent);
-            z-index: 3; pointer-events: none;
-        }
-        .scrub-video-stage::after {
-            content: ""; position: absolute; inset: 0; pointer-events: none;
-            background: radial-gradient(ellipse at 70% 50%, transparent 45%, rgba(0,0,0,0.3) 100%);
-            z-index: 2;
-        }
-        /* Cover Grok watermark (bottom-right) */
-        .scrub-video-stage .wm-cover {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            width: min(28%, 220px);
-            height: min(18%, 90px);
-            z-index: 4;
-            pointer-events: none;
-            background: linear-gradient(
-                to top left,
-                rgba(0, 0, 0, 0.92) 0%,
-                rgba(0, 0, 0, 0.55) 45%,
-                transparent 75%
-            );
-        }
-        @media (max-width: 820px) {
-            .scrub-section { height: 150vh; }
-            .scrub-sticky { flex-direction: column; }
-            .scrub-text {
-                width: 100%; height: auto; min-height: 34%;
-                border-right: none; border-bottom: 1px solid rgba(255,255,255,0.09);
-                padding: 1.25rem 1.15rem 1.1rem; justify-content: flex-start; gap: 1rem;
-            }
-            .scrub-labels-row { flex-direction: row !important; flex-wrap: wrap; gap: 0.75rem 1.15rem !important; }
-            .scrub-video-stage { flex: 1; min-height: 0; }
-            .scrub-video-stage::before { display: none; }
-        }
-        @media (prefers-reduced-motion: reduce) {
-            .scrub-section { height: auto; }
-            .scrub-sticky { position: relative; height: auto; flex-direction: column; }
-            .scrub-text { width: 100%; height: auto; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.09); }
-            .scrub-video-stage { height: 56vw; max-height: 420px; }
-            .scrub-video-stage video { position: relative; opacity: 1; visibility: visible; height: 100%; }
-            .scrub-video-stage video:not(.is-active) { display: none; }
-        }
     </style>
 </head>
-<body class="bg-brand-black text-white font-sans antialiased selection:bg-amber-500/30 selection:text-white min-h-screen flex flex-col justify-between overflow-x-hidden">
+<body class="bg-brand-black text-white font-sans antialiased selection:bg-amber-500/25 selection:text-white min-h-screen flex flex-col justify-between overflow-x-hidden">
+    
     <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0"></div>
+    
+    <!-- HEADER -->
     <header id="main-header" class="fixed top-0 left-0 w-full z-50 glass-panel border-b border-brand-border h-20">
         <div class="header-inner max-w-7xl mx-auto px-5 sm:px-6 h-20 flex items-center justify-between">
+            
             <a href="#hero" class="relative flex items-center h-9 overflow-hidden">
                 <span class="logo-full font-mono text-xl sm:text-2xl font-medium tracking-widest text-white flex items-center gap-2.5">
-                    <span class="inline-block w-2 h-2 sm:w-2.5 sm:h-2.5 bg-brand-amber rounded-sm shadow-[0_0_10px_rgba(245,158,11,0.6)]"></span>
+                    <span class="inline-block w-2 h-2 sm:w-2.5 sm:h-2.5 bg-brand-amber rounded-sm"></span>
                     Montium
                 </span>
                 <span class="logo-mark absolute left-0 top-1/2 -translate-y-1/2 font-mono text-2xl sm:text-3xl text-white opacity-0 scale-75 flex items-center gap-2">
-                    <span class="inline-block w-2 h-2 sm:w-2.5 sm:h-2.5 bg-brand-amber rounded-sm shadow-[0_0_10px_rgba(245,158,11,0.6)]"></span>
+                    <span class="inline-block w-2 h-2 sm:w-2.5 sm:h-2.5 bg-brand-amber rounded-sm"></span>
                     M
                 </span>
             </a>
-            <nav class="hidden lg:flex items-center gap-8 font-mono text-xs uppercase tracking-widest text-brand-silver">
+
+            <nav class="hidden lg:flex items-center gap-10 font-mono text-xs uppercase tracking-widest text-brand-silver">
                 <a href="#hero" class="hover:text-white transition-colors">Overview</a>
                 <a href="#mission" class="hover:text-white transition-colors">Mission</a>
                 <a href="#capabilities" class="hover:text-white transition-colors">Capabilities</a>
                 <a href="#process" class="hover:text-white transition-colors">Process</a>
                 <a href="#contact" class="hover:text-white transition-colors">Engagement</a>
             </nav>
-            <a href="#contact" class="nav-cta inline-flex items-center justify-center font-mono text-[10px] sm:text-xs uppercase tracking-widest px-4 sm:px-5 py-2 sm:py-2.5 bg-brand-amber text-black font-semibold hover:bg-brand-gold transition-all shadow-[0_0_20px_rgba(245,158,11,0.25)]">Engage</a>
+            
+            <a href="#contact" class="nav-cta inline-flex items-center justify-center font-mono text-[10px] sm:text-xs uppercase tracking-widest px-5 py-2.5 bg-brand-amber text-black font-semibold hover:bg-brand-gold transition-all">
+                Engage
+            </a>
         </div>
     </header>
+
     <main class="relative z-10 pt-20 flex-grow">
-        <section id="hero" class="relative min-h-[88vh] sm:min-h-[92vh] flex items-center px-5 sm:px-6 py-20 sm:py-28 overflow-hidden">
-            <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2400&auto=format&fit=crop">
-                <source src="https://res.cloudinary.com/rudgu9nf/video/upload/v1786495893/grok-video-eca82c22-1600-4278-b2c8-326c745f2e58_1.mp4" type="video/mp4">
-            </video>
-            <div class="absolute inset-0 bg-gradient-to-r from-brand-black/80 via-brand-black/35 to-transparent z-[1]"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-brand-black/75 via-transparent to-brand-black/25 z-[1]"></div>
-            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.12),transparent_50%)] z-[1]"></div>
-            <div class="relative z-10 max-w-5xl mx-auto w-full text-left space-y-6 sm:space-y-8">
-                <div class="inline-flex items-center gap-2.5 px-3 py-1.5 bg-white/5 border border-brand-amber/30 rounded-full font-mono text-[10px] sm:text-xs text-brand-gold tracking-widest uppercase backdrop-blur-sm">
-                    <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-brand-amber animate-pulse shadow-[0_0_8px_rgba(245,158,11,0.8)]"></span>
+        
+        <!-- HERO -->
+        <section id="hero" class="relative min-h-[90vh] flex items-center px-5 sm:px-6 py-24 sm:py-32 overflow-hidden">
+            
+            <div class="absolute inset-0">
+                <img 
+                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2400&auto=format&fit=crop" 
+                    alt="Next era of enterprise" 
+                    class="w-full h-full object-cover opacity-70"
+                >
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-black/90 via-brand-black/50 to-brand-black/20"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-black/80 via-transparent to-brand-black/30"></div>
+            </div>
+            
+            <div class="relative z-10 max-w-5xl mx-auto w-full text-left space-y-8">
+                <div class="inline-flex items-center gap-2.5 px-3 py-1.5 bg-white/5 border border-white/10 rounded-full font-mono text-[10px] sm:text-xs text-zinc-300 tracking-widest uppercase">
                     Enterprise Technology Consulting
                 </div>
-                <h1 class="font-mono text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-white leading-[1.12] max-w-4xl">
+               
+                <h1 class="font-mono text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-white leading-[1.1] max-w-4xl">
                     Delivering the Next Era<br class="hidden sm:block"> of Enterprise
                 </h1>
-                <p class="max-w-xl text-base sm:text-lg text-zinc-200 font-light leading-relaxed">
-                    Montium executes complex digital transformations, modernises critical infrastructure, and de-risks mission-critical technology operations for market leaders.
-                </p>
-                <div class="flex flex-col sm:flex-row items-stretch sm:items-start gap-3 sm:gap-4 pt-4 font-mono text-[10px] sm:text-xs tracking-widest uppercase">
-                    <a href="#contact" class="px-6 sm:px-8 py-3.5 sm:py-4 bg-brand-amber text-black font-semibold hover:bg-brand-gold transition-all text-center shadow-[0_0_30px_rgba(245,158,11,0.35)]">Initiate Engagement</a>
-                    <a href="#capabilities" class="px-6 sm:px-8 py-3.5 sm:py-4 border border-white/25 bg-black/25 text-white font-normal hover:border-brand-amber/50 hover:bg-white/5 transition-all backdrop-blur-sm text-center">Explore Capabilities</a>
-                </div>
-            </div>
-        </section>
-        <section id="mission" class="relative border-y border-brand-border bg-brand-dark/60">
-            <div class="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 py-20 sm:py-28 md:py-32">
-                <div class="space-y-6 sm:space-y-8">
-                    <p class="font-mono text-[10px] sm:text-xs text-brand-amber/90 tracking-widest uppercase">Mission</p>
-                    <p id="lit-statement" class="font-mono text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-light tracking-tight leading-[1.3]">
-                        <span class="statement__w">Legacy</span> <span class="statement__w">infrastructure</span> <span class="statement__w">holds</span> <span class="statement__w">businesses</span> <span class="statement__w">back.</span> <span class="statement__w">Montium</span> <span class="statement__w">deploys</span> <span class="statement__w">teams</span> <span class="statement__w">to</span> <span class="statement__w">modernise</span> <span class="statement__w">complex</span> <span class="statement__w">ecosystems,</span> <span class="statement__w">unlocking</span> <span class="statement__w">operational</span> <span class="statement__w">efficiency</span> <span class="statement__w">and</span> <span class="statement__w">enhancing</span> <span class="statement__w">data</span> <span class="statement__w">sovereignty.</span>
-                    </p>
-                </div>
-            </div>
-        </section>
-      <!-- CAPABILITIES — clean Tesla-style layout -->
-<section id="capabilities" class="py-24 sm:py-32 md:py-40 px-5 sm:px-6 border-t border-brand-border">
-    <div class="max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-12 gap-16 lg:gap-20 items-start">
-
-            <!-- LEFT: Text -->
-            <div class="lg:col-span-5">
                 
-                <div class="mb-14">
+                <p class="max-w-lg text-lg text-zinc-300 font-light leading-relaxed">
+                    Montium removes the friction of legacy infrastructure so ambitious organisations can move with clarity and speed.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-start gap-4 pt-4 font-mono text-xs tracking-widest uppercase">
+                    <a href="#contact" class="px-8 py-4 bg-brand-amber text-black font-semibold hover:bg-brand-gold transition-all">
+                        Initiate Engagement
+                    </a>
+                    <a href="#capabilities" class="px-8 py-4 border border-white/20 text-white hover:border-white/40 transition-all">
+                        Explore Capabilities
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- MISSION -->
+        <section id="mission" class="relative border-y border-brand-border">
+            <div class="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 py-28 sm:py-36 md:py-44">
+                <div class="space-y-8">
+                    <p class="font-mono text-[10px] sm:text-xs text-brand-amber/80 tracking-widest uppercase">
+                        Mission
+                    </p>
+                    <p id="lit-statement" class="font-mono text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-light tracking-tight leading-[1.55]">
+                        <span class="statement__w">Legacy</span> <span class="statement__w">infrastructure</span> <span class="statement__w">holds</span> <span class="statement__w">businesses</span> <span class="statement__w">back.</span><br><br>
+                        <span class="statement__w">Montium</span> <span class="statement__w">deploys</span> <span class="statement__w">teams</span> <span class="statement__w">to</span> <span class="statement__w">modernise</span> <span class="statement__w">complex</span> <span class="statement__w">ecosystems,</span> <span class="statement__w">unlocking</span> <span class="statement__w">operational</span> <span class="statement__w">efficiency</span> <span class="statement__w">and</span> <span class="statement__w">enhancing</span> <span class="statement__w">data</span> <span class="statement__w">sovereignty.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CAPABILITIES -->
+        <section id="capabilities" class="py-28 sm:py-36 md:py-44 px-5 sm:px-6 border-t border-brand-border">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+
+                    <div class="lg:col-span-5">
+                        
+                        <div class="mb-16">
+                            <p class="font-mono text-[10px] sm:text-xs text-brand-amber/80 tracking-widest uppercase mb-5">
+                                Practice Areas
+                            </p>
+                            <h2 class="font-mono text-3xl sm:text-4xl md:text-5xl font-light tracking-tight leading-[1.15] text-white">
+                                What holds organisations back.
+                            </h2>
+                            <p class="mt-7 text-base sm:text-lg text-zinc-400 font-light leading-relaxed">
+                                Legacy infrastructure is the quiet tax on every ambitious organisation. It drains energy, freezes decisions, and turns strategy into waiting.
+                            </p>
+                            <p class="mt-5 text-base sm:text-lg text-zinc-400 font-light leading-relaxed">
+                                Montium exists to remove that friction, because the biggest constraint on modern business is no longer capital or talent, it’s outdated infrastructure.
+                            </p>
+                        </div>
+
+                        <div class="space-y-0">
+
+                            <div class="py-9 border-t border-white/10">
+                                <p class="font-mono text-[10px] sm:text-xs text-zinc-500 tracking-wide mb-3">
+                                    Digital & Workplace
+                                </p>
+                                <h3 class="font-mono text-xl sm:text-2xl font-light text-white tracking-tight leading-snug">
+                                    Legacy systems drain critical business and people energy.
+                                </h3>
+                                <p class="mt-3 text-sm sm:text-base text-zinc-400 font-light leading-relaxed">
+                                    We unify complex environments so people and technology move at the same speed.
+                                </p>
+                            </div>
+
+                            <div class="py-9 border-t border-white/10">
+                                <p class="font-mono text-[10px] sm:text-xs text-zinc-500 tracking-wide mb-3">
+                                    Architecture
+                                </p>
+                                <h3 class="font-mono text-xl sm:text-2xl font-light text-white tracking-tight leading-snug">
+                                    Complexity freezes progress.
+                                </h3>
+                                <p class="mt-3 text-sm sm:text-base text-zinc-400 font-light leading-relaxed">
+                                    We design clear, resilient architectures that give leaders the freedom to scale.
+                                </p>
+                            </div>
+
+                            <div class="py-9 border-t border-white/10 border-b border-white/10">
+                                <p class="font-mono text-[10px] sm:text-xs text-zinc-500 tracking-wide mb-3">
+                                    Governance & Delivery
+                                </p>
+                                <h3 class="font-mono text-xl sm:text-2xl font-light text-white tracking-tight leading-snug">
+                                    Ambition dies in poor execution.
+                                </h3>
+                                <p class="mt-3 text-sm sm:text-base text-zinc-400 font-light leading-relaxed">
+                                    We put structure around high-stakes work so outcomes actually land.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7">
+                        <div class="relative w-full aspect-[4/5] lg:aspect-[3/4] rounded-2xl overflow-hidden bg-brand-card border border-white/8">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <p class="font-mono text-xs text-zinc-600 tracking-widest uppercase">
+                                    High quality image
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- MONTIUM METHODOLOGY -->
+        <section id="process" class="py-28 sm:py-36 md:py-44 px-5 sm:px-6 border-t border-brand-border">
+            <div class="max-w-4xl mx-auto">
+                
+                <div class="mb-20">
                     <p class="font-mono text-[10px] sm:text-xs text-brand-amber/80 tracking-widest uppercase mb-5">
-                        Practice Areas
+                        Montium Methodology
                     </p>
-                    <h2 class="font-mono text-3xl sm:text-4xl md:text-5xl font-light tracking-tight leading-[1.15] text-white">
-                        What holds organisations back.
+                    <h2 class="font-mono text-3xl sm:text-4xl md:text-5xl font-light tracking-tight leading-[1.15]">
+                        The Engagement Process
                     </h2>
-                    <p class="mt-6 text-base sm:text-lg text-zinc-400 font-light leading-relaxed">
-                        Legacy infrastructure is the quiet tax on every ambitious organisation. It drains energy, freezes decisions, and turns strategy into waiting.
-                    </p>
-                    <p class="mt-5 text-base sm:text-lg text-zinc-400 font-light leading-relaxed">
-                        Montium exists to remove that friction, because the biggest constraint on modern business is no longer capital or talent, it’s outdated infrastructure.
+                    <p class="mt-6 text-base sm:text-lg text-zinc-400 font-light max-w-xl leading-relaxed">
+                        A clear six-stage framework designed for complex environments and measurable outcomes.
                     </p>
                 </div>
 
                 <div class="space-y-0">
 
-                    <!-- Item 1 -->
-                    <div class="py-8 border-t border-white/10">
-                        <p class="font-mono text-[10px] sm:text-xs text-zinc-500 tracking-wide mb-3">
-                            Digital & Workplace
-                        </p>
-                        <h3 class="font-mono text-xl sm:text-2xl font-light text-white tracking-tight leading-snug">
-                            Legacy systems drain critical business and people energy.
-                        </h3>
-                        <p class="mt-3 text-sm sm:text-base text-zinc-400 font-light leading-relaxed">
-                            We unify complex environments so people and technology move at the same speed.
-                        </p>
+                    <div class="py-10 border-t border-white/10">
+                        <div class="flex flex-col sm:flex-row sm:items-baseline gap-3 sm:gap-10">
+                            <p class="font-mono text-xs text-zinc-500 tracking-widest w-28 shrink-0">Stage 01</p>
+                            <div>
+                                <h3 class="font-mono text-xl sm:text-2xl font-light text-white tracking-tight">
+                                    Initiate Engagement
+                                </h3>
+                                <p class="mt-3 text-base text-zinc-400 font-light leading-relaxed max-w-2xl">
+                                    Direct conversation with Montium leadership to define strategic objectives, constraints, and critical timelines.
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Item 2 -->
-                    <div class="py-8 border-t border-white/10">
-                        <p class="font-mono text-[10px] sm:text-xs text-zinc-500 tracking-wide mb-3">
-                            Architecture
-                        </p>
-                        <h3 class="font-mono text-xl sm:text-2xl font-light text-white tracking-tight leading-snug">
-                            Complexity freezes progress.
-                        </h3>
-                        <p class="mt-3 text-sm sm:text-base text-zinc-400 font-light leading-relaxed">
-                            We design clear, resilient architectures that give leaders the freedom to scale.
-                        </p>
+                    <div class="py-10 border-t border-white/10">
+                        <div class="flex flex-col sm:flex-row sm:items-baseline gap-3 sm:gap-10">
+                            <p class="font-mono text-xs text-zinc-500 tracking-widest w-28 shrink-0">Stage 02</p>
+                            <div>
+                                <h3 class="font-mono text-xl sm:text-2xl font-light text-white tracking-tight">
+                                    Requirement Discovery & Diagnostic
+                                </h3>
+                                <p class="mt-3 text-base text-zinc-400 font-light leading-relaxed max-w-2xl">
+                                    Comprehensive assessment of the existing technology ecosystem, security posture, and organisational readiness.
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Item 3 -->
-                    <div class="py-8 border-t border-white/10 border-b border-white/10">
-                        <p class="font-mono text-[10px] sm:text-xs text-zinc-500 tracking-wide mb-3">
-                            Governance & Delivery
-                        </p>
-                        <h3 class="font-mono text-xl sm:text-2xl font-light text-white tracking-tight leading-snug">
-                            Ambition dies in poor execution.
-                        </h3>
-                        <p class="mt-3 text-sm sm:text-base text-zinc-400 font-light leading-relaxed">
-                            We put structure around high-stakes work so outcomes actually land.
-                        </p>
+                    <div class="py-10 border-t border-white/10">
+                        <div class="flex flex-col sm:flex-row sm:items-baseline gap-3 sm:gap-10">
+                            <p class="font-mono text-xs text-zinc-500 tracking-widest w-28 shrink-0">Stage 03</p>
+                            <div>
+                                <h3 class="font-mono text-xl sm:text-2xl font-light text-white tracking-tight">
+                                    Architecture & Roadmap Design
+                                </h3>
+                                <p class="mt-3 text-base text-zinc-400 font-light leading-relaxed max-w-2xl">
+                                    Target-state architecture, risk framework, and phased execution roadmap designed for zero downtime.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="py-10 border-t border-white/10">
+                        <div class="flex flex-col sm:flex-row sm:items-baseline gap-3 sm:gap-10">
+                            <p class="font-mono text-xs text-zinc-500 tracking-widest w-28 shrink-0">Stage 04</p>
+                            <div>
+                                <h3 class="font-mono text-xl sm:text-2xl font-light text-white tracking-tight">
+                                    Governance & SOW Formulation
+                                </h3>
+                                <p class="mt-3 text-base text-zinc-400 font-light leading-relaxed max-w-2xl">
+                                    Precise statements of work, governance structures, milestones and KPIs established before delivery begins.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="py-10 border-t border-white/10">
+                        <div class="flex flex-col sm:flex-row sm:items-baseline gap-3 sm:gap-10">
+                            <p class="font-mono text-xs text-zinc-500 tracking-widest w-28 shrink-0">Stage 05</p>
+                            <div>
+                                <h3 class="font-mono text-xl sm:text-2xl font-light text-white tracking-tight">
+                                    Deployment & Execution Assurance
+                                </h3>
+                                <p class="mt-3 text-base text-zinc-400 font-light leading-relaxed max-w-2xl">
+                                    Delivery teams execute modernisation and consolidation with continuous governance and quality control.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="py-10 border-t border-white/10 border-b border-white/10">
+                        <div class="flex flex-col sm:flex-row sm:items-baseline gap-3 sm:gap-10">
+                            <p class="font-mono text-xs text-zinc-500 tracking-widest w-28 shrink-0">Stage 06</p>
+                            <div>
+                                <h3 class="font-mono text-xl sm:text-2xl font-light text-white tracking-tight">
+                                    System Optimisation & Scale
+                                </h3>
+                                <p class="mt-3 text-base text-zinc-400 font-light leading-relaxed max-w-2xl">
+                                    Performance validation, knowledge transfer, and ongoing advisory mechanisms for future growth.
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
             </div>
+        </section>
 
-            <!-- RIGHT: Image space -->
-            <div class="lg:col-span-7">
-                <div class="relative w-full aspect-[4/5] lg:aspect-[3/4] rounded-2xl overflow-hidden bg-brand-card border border-white/8">
-                    
-                    <!-- Replace this with your high-quality image -->
-                    <!-- Example:
-                    <img src="YOUR-IMAGE-URL" alt="Modern workplace" class="absolute inset-0 w-full h-full object-cover">
-                    -->
-                    
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <p class="font-mono text-xs text-zinc-600 tracking-widest uppercase">
-                            High quality image
-                        </p>
-                    </div>
+        <!-- CONTACT -->
+        <section id="contact" class="py-28 sm:py-36 md:py-44 px-5 sm:px-6 border-t border-brand-border">
+            <div class="max-w-2xl mx-auto text-center space-y-10">
+                
+                <div class="space-y-5">
+                    <p class="font-mono text-[10px] sm:text-xs text-brand-amber/80 tracking-widest uppercase">
+                        Get in Touch
+                    </p>
+                    <h2 class="font-mono text-3xl sm:text-4xl md:text-5xl font-light tracking-tight leading-[1.15]">
+                        Ready to accelerate<br>your roadmap?
+                    </h2>
+                    <p class="text-base sm:text-lg text-zinc-400 font-light max-w-md mx-auto leading-relaxed">
+                        Schedule a discovery session to evaluate your current technology ecosystem and design the path forward.
+                    </p>
                 </div>
-            </div>
 
-        </div>
-    </div>
-</section>
-        <section id="contact" class="py-14 sm:py-20 md:py-28 px-5 sm:px-6 max-w-4xl mx-auto space-y-8 sm:space-y-12 border-t border-brand-border">
-            <div class="space-y-4 sm:space-y-5 text-center">
-                <p class="font-mono text-[10px] sm:text-xs text-brand-amber/80 tracking-widest uppercase">Get in Touch</p>
-                <h2 class="font-mono text-2xl sm:text-3xl md:text-5xl font-light tracking-tight">Ready to Accelerate<br>Your Roadmap?</h2>
-                <p class="text-base text-zinc-300 max-w-lg mx-auto font-light leading-relaxed">Schedule a discovery session to evaluate your current technology ecosystem and architect your path forward.</p>
-            </div>
-            <form id="discovery-form" onsubmit="handleFormSubmit(event)" class="glass-panel p-6 sm:p-8 md:p-12 space-y-5 sm:space-y-6 rounded-2xl">
-                <div class="grid sm:grid-cols-2 gap-5">
+                <form id="discovery-form" onsubmit="handleFormSubmit(event)" class="glass-panel p-8 sm:p-10 space-y-6 text-left rounded-2xl">
+                    <div class="grid sm:grid-cols-2 gap-5">
+                        <div class="space-y-2">
+                            <label class="font-mono text-[10px] text-zinc-500 uppercase tracking-wider">Name</label>
+                            <input type="text" required class="w-full bg-brand-card border border-brand-border p-3.5 text-sm text-white focus:outline-none focus:border-brand-amber/40 transition-colors rounded-lg">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="font-mono text-[10px] text-zinc-500 uppercase tracking-wider">Email</label>
+                            <input type="email" required class="w-full bg-brand-card border border-brand-border p-3.5 text-sm text-white focus:outline-none focus:border-brand-amber/40 transition-colors rounded-lg">
+                        </div>
+                    </div>
                     <div class="space-y-2">
-                        <label class="font-mono text-[10px] sm:text-xs text-zinc-400 uppercase tracking-wider">Name</label>
-                        <input type="text" required class="w-full bg-brand-card border border-brand-border p-3 sm:p-3.5 text-sm text-white focus:outline-none focus:border-brand-amber/50 font-sans transition-colors rounded-lg">
+                        <label class="font-mono text-[10px] text-zinc-500 uppercase tracking-wider">Practice Focus</label>
+                        <select class="w-full bg-brand-card border border-brand-border p-3.5 text-sm text-white focus:outline-none focus:border-brand-amber/40 transition-colors rounded-lg">
+                            <option>Modern Workplace Systems</option>
+                            <option>Enterprise Architecture</option>
+                            <option>Governance & Execution Assurance</option>
+                            <option>Full Ecosystem Review</option>
+                        </select>
                     </div>
                     <div class="space-y-2">
-                        <label class="font-mono text-[10px] sm:text-xs text-zinc-400 uppercase tracking-wider">Email</label>
-                        <input type="email" required class="w-full bg-brand-card border border-brand-border p-3 sm:p-3.5 text-sm text-white focus:outline-none focus:border-brand-amber/50 font-sans transition-colors rounded-lg">
+                        <label class="font-mono text-[10px] text-zinc-500 uppercase tracking-wider">Notes</label>
+                        <textarea rows="4" class="w-full bg-brand-card border border-brand-border p-3.5 text-sm text-white focus:outline-none focus:border-brand-amber/40 transition-colors rounded-lg"></textarea>
                     </div>
-                </div>
-                <div class="space-y-2">
-                    <label class="font-mono text-[10px] sm:text-xs text-zinc-400 uppercase tracking-wider">Practice Focus / Objective</label>
-                    <select class="w-full bg-brand-card border border-brand-border p-3 sm:p-3.5 text-sm text-white focus:outline-none focus:border-brand-amber/50 font-sans transition-colors rounded-lg">
-                        <option>Modern Workplace Systems</option>
-                        <option>Enterprise Architecture</option>
-                        <option>Governance & Execution Assurance</option>
-                        <option>Full Ecosystem Review</option>
-                    </select>
-                </div>
-                <div class="space-y-2">
-                    <label class="font-mono text-[10px] sm:text-xs text-zinc-400 uppercase tracking-wider">Ecosystem Overview / Notes</label>
-                    <textarea rows="4" class="w-full bg-brand-card border border-brand-border p-3 sm:p-3.5 text-sm text-white focus:outline-none focus:border-brand-amber/50 font-sans transition-colors rounded-lg"></textarea>
-                </div>
-                <button type="submit" class="w-full py-3.5 sm:py-4 bg-brand-amber text-black font-mono text-[10px] sm:text-xs font-semibold uppercase tracking-widest hover:bg-brand-gold transition-colors rounded-lg shadow-[0_0_25px_rgba(245,158,11,0.25)]">Schedule Discovery Session</button>
-                <p id="form-status" class="hidden text-center font-mono text-[10px] sm:text-xs text-brand-gold pt-1"></p>
-            </form>
+                    <button type="submit" class="w-full py-4 bg-brand-amber text-black font-mono text-xs font-semibold uppercase tracking-widest hover:bg-brand-gold transition-colors rounded-lg">
+                        Schedule Discovery Session
+                    </button>
+                    <p id="form-status" class="hidden text-center font-mono text-xs text-brand-gold"></p>
+                </form>
+            </div>
         </section>
     </main>
-    <footer class="relative z-10 border-t border-brand-border bg-brand-black py-10 sm:py-14 px-5 sm:px-6">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-5 font-mono text-[10px] sm:text-xs text-zinc-500">
+
+    <!-- FOOTER -->
+    <footer class="relative z-10 border-t border-brand-border py-12 px-5 sm:px-6">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6 font-mono text-xs text-zinc-500">
             <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-brand-amber rounded-sm shadow-[0_0_8px_rgba(245,158,11,0.6)]"></span>
-                <span class="text-white font-medium tracking-widest">Montium</span>
-                <span>© 2026 Montium Advisory Systems</span>
+                <span class="w-2 h-2 bg-brand-amber rounded-sm"></span>
+                <span class="text-white tracking-widest">Montium</span>
+                <span>© 2026</span>
             </div>
-            <div class="flex gap-6 tracking-widest uppercase">
+            <div class="flex gap-8 tracking-widest uppercase">
                 <a href="#" class="hover:text-white transition-colors">Security</a>
                 <a href="#" class="hover:text-white transition-colors">Governance</a>
                 <a href="#" class="hover:text-white transition-colors">Privacy</a>
             </div>
         </div>
     </footer>
+
     <script>
         const header = document.getElementById('main-header');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 40) header.classList.add('scrolled');
             else header.classList.remove('scrolled');
         });
-        document.querySelectorAll('.hero-video').forEach(v => { v.play().catch(() => {}); });
+
         window.addEventListener('scroll', () => {
             const spans = document.querySelectorAll('.statement__w');
             const triggerBottom = window.innerHeight * 0.85;
             spans.forEach((span, index) => {
                 const box = span.getBoundingClientRect();
-                if (box.top < triggerBottom - (index * 3)) span.classList.add('is-lit');
+                if (box.top < triggerBottom - (index * 4)) span.classList.add('is-lit');
                 else span.classList.remove('is-lit');
             });
-            document.querySelectorAll('.process-card').forEach((card) => {
-                const rect = card.getBoundingClientRect();
-                const trigger = window.innerWidth < 640 ? 160 : 220;
-                if (rect.top <= trigger) {
-                    const progress = Math.min((trigger - rect.top) / 280, 1);
-                    card.style.transform = `scale(${1 - (progress * 0.04)})`;
-                    card.style.opacity = 1 - (progress * 0.28);
-                } else {
-                    card.style.transform = 'scale(1)';
-                    card.style.opacity = '1';
-                }
-            });
         });
+
         function handleFormSubmit(event) {
             event.preventDefault();
             const status = document.getElementById('form-status');
-            status.innerText = "INQUIRY RECEIVED // DISCOVERY SESSION LOGGED.";
+            status.innerText = "Inquiry received. Discovery session logged.";
             status.classList.remove('hidden');
             event.target.reset();
         }
-        (function () {
-            "use strict";
-            const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-            if (reduced) {
-                const v1 = document.getElementById("scrubV1");
-                if (v1) v1.classList.add("is-active");
-                return;
-            }
-            const videos = [document.getElementById("scrubV1"), document.getElementById("scrubV2"), document.getElementById("scrubV3")];
-            if (!videos[0]) return;
-            const chapters = [
-                {
-                    kicker: "Digital & Workplace",
-                    title: "Legacy systems drain energy.",
-                    sub: "We unify complex environments so people and technology move at the same speed — consolidating estates, hardening foundations, and removing the drag of outdated platforms.",
-                    bullets: ["Environment consolidation", "Cloud & security foundation", "Workforce acceleration"]
-                },
-                {
-                    kicker: "Architecture",
-                    title: "Complexity freezes progress.",
-                    sub: "Modern architecture should be clear, resilient, and deliberately scalable — not a tangle of point solutions. We design target-state systems that separate concerns, absorb change, and leave room to grow.",
-                    bullets: ["Target-state design & reference architectures", "Systems integration & interface clarity", "Data sovereignty, resilience & failure domains", "Scalable patterns for growth and recovery"]
-                },
-                {
-                    kicker: "Governance & Delivery",
-                    title: "Ambition dies in poor execution.",
-                    sub: "We put structure around high-stakes work so outcomes actually land — with delivery leadership, assurance, and advisory that keeps AI and modern systems accountable.",
-                    bullets: ["Delivery leadership", "Risk & assurance", "Strategic advisory"]
-                }
-            ];
-            const labels = document.querySelectorAll(".scrub-label");
-            const titleEl = document.getElementById("scrubTitle");
-            const subEl = document.getElementById("scrubSub");
-            const progressFill = null;
-            const progressLabel = null;
-            const progressPct = null;
-            const section = document.getElementById("capabilities");
-            const durations = [10.04, 10.04, 10.04];
-            let activeIndex = -1, frameId = null;
-            const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) || (window.matchMedia && window.matchMedia("(max-width: 820px)").matches);
-            const SEEK_THRESHOLD = isMobile ? 0.09 : 0.035;
-            function seek(video, index, time) {
-                if (!video || !isFinite(time)) return;
-                const clamped = Math.max(0, Math.min(time, durations[index] - 0.04));
-                if (Math.abs(video.currentTime - clamped) > SEEK_THRESHOLD) {
-                    try { video.currentTime = clamped; } catch (e) {}
-                }
-            }
-            function getProgress() {
-                const rect = section.getBoundingClientRect();
-                const total = section.offsetHeight - window.innerHeight;
-                if (total <= 1) return 0;
-                return Math.min(Math.max(-rect.top / total, 0), 1);
-            }
-            const kickerEl = document.getElementById("scrubKicker");
-            const bulletsEl = document.getElementById("scrubBullets");
-
-            function setActive(index) {
-                if (index === activeIndex) return;
-                activeIndex = index;
-                videos.forEach((v, i) => {
-                    const on = i === index;
-                    v.classList.toggle("is-active", on);
-                    if (!on && !v.paused) { try { v.pause(); } catch (e) {} }
-                });
-                labels.forEach((l, i) => l.classList.toggle("is-current", i === index));
-                const ch = chapters[index];
-                if (kickerEl) kickerEl.textContent = ch.kicker;
-                if (titleEl) titleEl.textContent = ch.title;
-                if (subEl) subEl.textContent = ch.sub;
-                if (bulletsEl && ch.bullets) {
-                    bulletsEl.innerHTML = ch.bullets.map(b => "<li>" + b + "</li>").join("");
-                }
-                
-            }
-            function update() {
-                frameId = null;
-                const p = getProgress();
-                
-                const weights = [0.25, 0.30, 0.45];
-                let index = 0, local = 0, acc = 0;
-                for (let i = 0; i < 3; i++) {
-                    const next = acc + weights[i];
-                    if (p < next || i === 2) {
-                        index = i;
-                        local = Math.min(Math.max((p - acc) / weights[i], 0), 0.999);
-                        break;
-                    }
-                    acc = next;
-                }
-                setActive(index);
-                seek(videos[index], index, local * durations[index]);
-                if (index > 0) seek(videos[index - 1], index - 1, durations[index - 1] * 0.97);
-                if (index < 2) seek(videos[index + 1], index + 1, 0.03);
-            }
-            function requestUpdate() {
-                if (frameId == null) frameId = requestAnimationFrame(update);
-            }
-            const loaded = [false, false, false];
-            function loadVideo(index) {
-                if (loaded[index]) return;
-                const v = videos[index];
-                const url = v.dataset.src;
-                if (!url) return;
-                loaded[index] = true;
-                v.preload = "auto";
-                v.src = url;
-                v.load();
-                const onMeta = () => {
-                    if (v.duration && isFinite(v.duration) && v.duration > 0) durations[index] = v.duration;
-                    try { v.currentTime = 0.02; } catch (e) {}
-                    requestUpdate();
-                };
-                if (v.readyState >= 1) onMeta();
-                else v.addEventListener("loadedmetadata", onMeta, { once: true });
-            }
-            function loadAllNearby() {
-                loadVideo(0);
-                setTimeout(() => loadVideo(1), 180);
-                setTimeout(() => loadVideo(2), 360);
-            }
-            if ("IntersectionObserver" in window) {
-                const io = new IntersectionObserver((entries) => {
-                    entries.forEach((e) => {
-                        if (e.isIntersecting) { loadAllNearby(); io.disconnect(); }
-                    });
-                }, { rootMargin: "150% 0px", threshold: 0 });
-                io.observe(section);
-            } else {
-                window.addEventListener("scroll", function start() {
-                    loadAllNearby();
-                    window.removeEventListener("scroll", start);
-                }, { passive: true, once: true });
-                setTimeout(loadAllNearby, 1200);
-            }
-            window.addEventListener("scroll", requestUpdate, { passive: true });
-            window.addEventListener("resize", requestUpdate, { passive: true });
-            window.addEventListener("touchstart", function unlock() {
-                videos.forEach((v) => {
-                    if (!v.src) return;
-                    const p = v.play();
-                    if (p && p.then) p.then(() => v.pause()).catch(() => {});
-                });
-                window.removeEventListener("touchstart", unlock);
-            }, { passive: true, once: true });
-            requestUpdate();
-        })();
     </script>
 </body>
 </html>
